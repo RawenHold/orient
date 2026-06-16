@@ -10,9 +10,15 @@ export function TopNav({ active = "investor" }: TopNavProps) {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/60 bg-white/78 backdrop-blur-xl">
       <nav className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4 py-3 md:px-8">
-        <Link href="/" className="flex min-w-0 items-center gap-3" aria-label="Orient UBook home">
-          <Image src="/assets/logo.svg" alt="Orient UBook" width={42} height={42} className="h-10 w-10 rounded-md object-cover" priority />
-          <span className="hidden font-semibold text-ink sm:inline">Orient UBook</span>
+        <Link href="/" className="flex min-w-0 items-center" aria-label="Orient UBook home">
+          <Image
+            src="/assets/logo.svg"
+            alt="Orient UBook"
+            width={214}
+            height={26}
+            className="h-7 w-auto max-w-[170px] sm:max-w-[214px]"
+            priority
+          />
         </Link>
 
         <div className="hidden items-center gap-5 text-sm font-semibold text-slate-600 lg:flex">
