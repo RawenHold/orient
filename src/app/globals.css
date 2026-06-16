@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "ArgueDemo";
+  src: url("/assets/argue-demo.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ink: #0f1b2d;
+  --cobalt: #2514c9;
+  --lagoon: #17b9c1;
+  --gold: #d5a246;
+  --milk: #fbfbf7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--milk);
+  font-family: Aptos, "Segoe UI", Tahoma, sans-serif;
+}
+
+.font-display {
+  font-family: "ArgueDemo", Georgia, serif;
+}
+
+.glass-panel {
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.58)),
+    linear-gradient(135deg, rgba(37, 20, 201, 0.08), rgba(23, 185, 193, 0.08));
+  box-shadow: 0 20px 70px rgba(24, 32, 84, 0.1);
+  backdrop-filter: blur(18px);
+}
+
+.service-card {
+  min-height: 690px;
+}
+
+.bg-ceramic {
+  background-image:
+    linear-gradient(90deg, rgba(37, 20, 201, 0.07) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(23, 185, 193, 0.07) 1px, transparent 1px);
+  background-size: 38px 38px;
+}
+
+.presentation-cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: conic-gradient(from var(--deck-angle), var(--cobalt), var(--lagoon), var(--gold), var(--cobalt));
+  box-shadow: 0 24px 80px rgba(37, 20, 201, 0.2);
+  animation: deck-border-spin 4.5s linear infinite;
+}
+
+.presentation-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.78), transparent);
+  transform: translateX(-110%);
+  animation: deck-light-sweep 2.8s ease-in-out infinite;
+}
+
+@property --deck-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes deck-border-spin {
+  to {
+    --deck-angle: 360deg;
+  }
+}
+
+@keyframes deck-light-sweep {
+  0%,
+  45% {
+    transform: translateX(-110%);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}
+
+::selection {
+  background: rgba(37, 20, 201, 0.18);
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    min-height: auto;
+  }
+}
