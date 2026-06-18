@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BarChart3, CheckCircle2, CircleDollarSign, Layers3, Sparkles, Target } from "lucide-react";
+import { ArrowRight, BarChart3, CheckCircle2, CircleDollarSign, ExternalLink, Layers3, Sparkles, Target } from "lucide-react";
 import { budgetSplit, customerSegments, deckMetrics, heroProof, investorRoadmap, marketTimeline, problemPoints, revenueStreams, solutionPillars, whyNow } from "@/data/deck";
 import { PresentationCta } from "./PresentationCta";
 
@@ -38,6 +38,14 @@ export function InvestorLanding() {
               <Link href="/developers" className="inline-flex items-center gap-2 rounded-md border border-cobalt/20 bg-white/80 px-5 py-3 font-semibold text-cobalt backdrop-blur transition hover:bg-white">
                 Техническое ТЗ <Layers3 size={18} />
               </Link>
+              <a
+                href="https://orient-ubook-mvp.lovable.app/app.html"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-cobalt/20 bg-white/80 px-5 py-3 font-semibold text-cobalt backdrop-blur transition hover:bg-white"
+              >
+                Открыть дизайн макет <ExternalLink size={18} />
+              </a>
             </div>
           </div>
         </div>
