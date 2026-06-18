@@ -21,10 +21,18 @@ export function Footer() {
         </div>
         <div>
           <h3 className="font-semibold">Контакты</h3>
-          <p className="mt-3 text-sm leading-6 text-white/70">Email: contact@orientubook.com</p>
-          <p className="text-sm leading-6 text-white/70">Telegram: @orientubook</p>
-          <p className="text-sm leading-6 text-white/70">Location: Tashkent, Uzbekistan</p>
-          <p className="mt-4 text-xs leading-5 text-white/50">Placeholder contacts. Перед публикацией заменить на реальные данные и прикрепить официальные источники к market цифрам.</p>
+          <div className="mt-3 grid gap-2 text-sm text-white/70">
+            <a href="tel:+998975453333" className="transition hover:text-white">
+              Телефон: +998 97 545 33 33
+            </a>
+            <a href="mailto:laz.dmitriy@gmail.com" className="transition hover:text-white">
+              Email: laz.dmitriy@gmail.com
+            </a>
+            <a href="https://t.me/LazDmitriy" target="_blank" rel="noreferrer" className="transition hover:text-white">
+              Telegram: @LazDmitriy
+            </a>
+            <p>Локация: Tashkent, Uzbekistan</p>
+          </div>
         </div>
       </div>
     </footer>
