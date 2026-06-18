@@ -56,10 +56,10 @@ export function InvestorLanding() {
               <Sparkles size={16} /> Central Asia travel concierge layer
             </p>
             <h1 className="font-display text-4xl leading-[1.04] text-ink sm:text-5xl md:text-7xl">
-              11.7M туристов в deck-модели 2025. Поездка всё ещё собирается вручную.
+              Миллионы туристов уже едут в Узбекистан. Но поездку всё ещё собирают вручную.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-700 md:text-xl">
-              Booking закрывает часть жилья. Гиды, трансферы, местные правила, оплата, язык, безопасность и поддержка остаются в мессенджерах, наличных и случайных рекомендациях. Orient UBook строит единый AI-консьерж и операционный слой поездки по Узбекистану.
+              Жильё, гиды, трансферы, оплата, язык и поддержка живут в разных сервисах и чатах. Orient UBook объединяет их в один мультиинструмент с AI-консьержем и понятным маршрутом от прилёта до отъезда гостя.
             </p>
             <div className="mt-8 grid max-w-4xl gap-3 sm:grid-cols-3">
               {heroProof.map((item) => (
