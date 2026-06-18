@@ -33,6 +33,18 @@ import {
 } from "@/data/deck";
 import { PresentationCta } from "./PresentationCta";
 
+const investorSectionNav = [
+  { href: "#investor-problem", label: "Investor problem" },
+  { href: "#market-opportunity", label: "Market opportunity" },
+  { href: "#competitive-position", label: "Competitive position" },
+  { href: "#validation-customers", label: "Validation plan & Customers" },
+  { href: "#seed-business-model", label: "Seed round & Business model" },
+  { href: "#risk-register", label: "Risk register" },
+  { href: "#implementation-roadmap", label: "Implementation roadmap" },
+  { href: "#why-now", label: "Why now" },
+  { href: "#investor-room", label: "Investor room" },
+];
+
 function ResponsiveTable({ children }: { children: ReactNode }) {
   return (
     <div className="overflow-x-auto rounded-md border border-slate-200 bg-white">
@@ -41,9 +53,29 @@ function ResponsiveTable({ children }: { children: ReactNode }) {
   );
 }
 
+function InvestorSectionSwitch() {
+  return (
+    <details className="investor-section-switcher">
+      <summary className="investor-section-trigger" aria-label="Открыть навигацию по разделам">
+        Разделы
+      </summary>
+      <nav className="investor-section-note" aria-label="Разделы для инвестора">
+        <p className="investor-section-kicker">Investor memo</p>
+        {investorSectionNav.map((item) => (
+          <a key={item.href} href={item.href} className="investor-section-link">
+            <span>{item.label}</span>
+          </a>
+        ))}
+      </nav>
+    </details>
+  );
+}
+
 export function InvestorLanding() {
   return (
     <>
+      <InvestorSectionSwitch />
+
       <section id="top" className="relative min-h-[92vh] overflow-hidden pt-[72px]">
         <div className="absolute inset-0 bg-[url('/assets/hero-bg.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/92 to-white/30" />
@@ -72,7 +104,7 @@ export function InvestorLanding() {
         </div>
       </section>
 
-      <section className="bg-milk px-4 py-16 md:px-8">
+      <section id="investor-problem" className="scroll-mt-24 bg-milk px-4 py-16 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.84fr_1.16fr]">
           <div className="relative">
             <p className="text-sm font-semibold uppercase text-cobalt">Investor problem</p>
@@ -139,7 +171,7 @@ export function InvestorLanding() {
         </div>
       </section>
 
-      <section id="market" className="bg-milk px-4 py-16 md:px-8">
+      <section id="market-opportunity" className="scroll-mt-24 bg-milk px-4 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div className="max-w-4xl">
@@ -185,7 +217,7 @@ export function InvestorLanding() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 md:px-8">
+      <section id="competitive-position" className="scroll-mt-24 bg-white px-4 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase text-cobalt">Competitive position</p>
@@ -223,7 +255,7 @@ export function InvestorLanding() {
         </div>
       </section>
 
-      <section className="bg-milk px-4 py-16 md:px-8">
+      <section id="validation-customers" className="scroll-mt-24 bg-milk px-4 py-16 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="glass-panel p-6">
             <p className="text-sm font-semibold uppercase text-cobalt">Validation plan</p>
@@ -255,7 +287,7 @@ export function InvestorLanding() {
         </div>
       </section>
 
-      <section id="investment" className="bg-white px-4 py-16 md:px-8">
+      <section id="seed-business-model" className="scroll-mt-24 bg-white px-4 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="glass-panel p-6">
@@ -337,7 +369,7 @@ export function InvestorLanding() {
         </div>
       </section>
 
-      <section className="bg-ceramic px-4 py-16 md:px-8">
+      <section id="risk-register" className="scroll-mt-24 bg-ceramic px-4 py-16 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="text-sm font-semibold uppercase text-cobalt">Risk register</p>
@@ -361,7 +393,7 @@ export function InvestorLanding() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 md:px-8">
+      <section id="implementation-roadmap" className="scroll-mt-24 bg-white px-4 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
@@ -395,7 +427,7 @@ export function InvestorLanding() {
         </div>
       </section>
 
-      <section className="bg-milk px-4 py-16 md:px-8">
+      <section id="why-now" className="scroll-mt-24 bg-milk px-4 py-16 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.86fr_1.14fr]">
           <div className="glass-panel relative overflow-hidden p-6">
             <div className="absolute -bottom-16 -right-12 h-40 w-40 rounded-full bg-cobalt/10 blur-3xl" />
@@ -423,7 +455,7 @@ export function InvestorLanding() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-16 md:px-8">
+      <section id="investor-room" className="scroll-mt-24 bg-white px-4 py-16 md:px-8">
         <div className="mx-auto max-w-5xl">
           <PresentationCta />
         </div>
