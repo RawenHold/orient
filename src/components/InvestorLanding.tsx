@@ -6,11 +6,14 @@ import {
   BarChart3,
   CheckCircle2,
   CircleDollarSign,
+  Compass,
   ExternalLink,
   Layers3,
+  Route,
   ShieldCheck,
   Sparkles,
   Target,
+  TrendingUp,
 } from "lucide-react";
 import {
   budgetSplit,
@@ -91,30 +94,45 @@ export function InvestorLanding() {
       </section>
 
       <section className="bg-milk px-4 py-16 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.84fr_1.16fr]">
+          <div className="relative">
             <p className="text-sm font-semibold uppercase text-cobalt">Investor problem</p>
             <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">{problemJourney.title}</h2>
-            <p className="mt-5 text-lg leading-8 text-slate-700">{problemJourney.text}</p>
+            <div className="mt-6 rounded-md border border-cobalt/15 bg-white/78 p-5 shadow-glass">
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-cobalt text-white">
+                  <Route size={22} />
+                </span>
+                <p className="text-sm font-semibold uppercase text-cobalt">реальный сценарий туриста</p>
+              </div>
+              <p className="mt-4 text-lg leading-8 text-slate-700">{problemJourney.text}</p>
+            </div>
           </div>
-          <ResponsiveTable>
-            <thead className="bg-slate-50 text-xs uppercase tracking-wide text-slate-500">
-              <tr>
-                <th className="px-4 py-3">Боль</th>
-                <th className="px-4 py-3">Как сейчас</th>
-                <th className="px-4 py-3">Почему это дорого</th>
-              </tr>
-            </thead>
-            <tbody>
-              {painPoints.map((point) => (
-                <tr key={point.title} className="border-t border-slate-100">
-                  <td className="px-4 py-4 font-semibold text-ink">{point.title}</td>
-                  <td className="px-4 py-4 leading-6 text-slate-700">{point.now}</td>
-                  <td className="px-4 py-4 leading-6 text-slate-700">{point.cost}</td>
-                </tr>
-              ))}
-            </tbody>
-          </ResponsiveTable>
+          <div className="grid gap-3 md:grid-cols-2">
+            {painPoints.map((point, index) => (
+              <article key={point.title} className="feature-card group rounded-md border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-cobalt/25 hover:shadow-glass">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <span className="text-xs font-semibold uppercase text-cobalt">точка боли {index + 1}</span>
+                    <h3 className="mt-2 text-xl font-semibold text-ink">{point.title}</h3>
+                  </div>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-cobalt/5 text-cobalt transition group-hover:bg-cobalt group-hover:text-white">
+                    <Compass size={19} />
+                  </span>
+                </div>
+                <div className="mt-5 grid gap-3">
+                  <div className="rounded-md bg-slate-50 p-3">
+                    <p className="text-xs font-semibold uppercase text-slate-500">сейчас</p>
+                    <p className="mt-1 text-sm leading-6 text-slate-700">{point.now}</p>
+                  </div>
+                  <div className="rounded-md bg-cobalt/5 p-3">
+                    <p className="text-xs font-semibold uppercase text-cobalt">стоимость проблемы</p>
+                    <p className="mt-1 text-sm leading-6 text-slate-700">{point.cost}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -144,27 +162,42 @@ export function InvestorLanding() {
 
       <section id="market" className="bg-milk px-4 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
-            <div>
+          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+            <div className="max-w-4xl">
               <p className="text-sm font-semibold uppercase text-cobalt">Market opportunity</p>
               <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">Окно входа открыто: спрос растёт быстрее, чем локальная цифровая инфраструктура.</h2>
+            </div>
+            <div className="glass-panel relative overflow-hidden p-5">
+              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-lagoon/15 blur-2xl" />
+              <div className="relative flex items-start gap-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-cobalt text-white">
+                  <TrendingUp size={22} />
+                </span>
+                <div>
+                  <p className="text-sm font-semibold uppercase text-cobalt">market signal</p>
+                  <p className="mt-2 text-lg font-semibold leading-7 text-ink">Спрос уже сформирован, но единый цифровой маршрут ещё не стал стандартом рынка.</p>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="mt-8 grid gap-3 md:grid-cols-4">
-            {marketTimeline.map((item) => (
-              <div key={item.year} className="glass-panel p-5">
-                <p className="text-sm font-semibold text-cobalt">{item.year}</p>
-                <p className="mt-3 text-4xl font-semibold text-ink">{item.value}</p>
+            {marketTimeline.map((item, index) => (
+              <div key={item.year} className="metric-card glass-panel p-5" style={{ animationDelay: `${index * 70}ms` }}>
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-sm font-semibold text-cobalt">{item.year}</p>
+                  <span className="h-2 w-2 rounded-full bg-lagoon shadow-[0_0_18px_rgba(23,185,193,0.75)]" />
+                </div>
+                <p className="mt-3 text-4xl font-semibold text-ink md:text-5xl">{item.value}</p>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-6 grid gap-3 md:grid-cols-4">
-            {deckMetrics.map((metric) => (
-              <div key={metric.label} className="rounded-md border border-slate-200 bg-white p-5">
-                <p className="text-3xl font-semibold text-ink">{metric.value}</p>
+            {deckMetrics.map((metric, index) => (
+              <div key={metric.label} className="feature-card rounded-md border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-cobalt/25 hover:shadow-glass" style={{ animationDelay: `${index * 60}ms` }}>
+                <p className="text-3xl font-semibold text-ink md:text-4xl">{metric.value}</p>
                 <p className="mt-2 font-semibold text-slate-700">{metric.label}</p>
                 <p className="mt-3 text-xs leading-5 text-slate-500">{metric.note}</p>
               </div>
@@ -384,14 +417,26 @@ export function InvestorLanding() {
       </section>
 
       <section className="bg-milk px-4 py-16 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="grid content-center">
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.86fr_1.14fr]">
+          <div className="glass-panel relative overflow-hidden p-6">
+            <div className="absolute -bottom-16 -right-12 h-40 w-40 rounded-full bg-cobalt/10 blur-3xl" />
             <p className="text-sm font-semibold uppercase text-cobalt">Why now</p>
             <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">Рынок созрел для локального travel layer.</h2>
+            <p className="mt-5 text-sm leading-6 text-slate-600">
+              Узбекистан уже получает туристический спрос, но цифровой слой поездки ещё не занял сильный локальный игрок.
+            </p>
+            <div className="relative mt-6 rounded-md border border-cobalt/15 bg-white/70 p-4">
+              <p className="text-xs font-semibold uppercase text-slate-500">timing thesis</p>
+              <p className="mt-2 text-2xl font-semibold text-ink">Local-first сейчас важнее глобального каталога.</p>
+            </div>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
-            {whyNow.map((item) => (
-              <div key={item} className="rounded-md border border-slate-200 bg-white/78 p-4 text-sm leading-6 text-slate-700">
+            {whyNow.map((item, index) => (
+              <div key={item} className="feature-card group rounded-md border border-slate-200 bg-white/85 p-5 text-sm leading-6 text-slate-700 transition hover:-translate-y-1 hover:border-cobalt/25 hover:shadow-glass" style={{ animationDelay: `${index * 70}ms` }}>
+                <div className="mb-4 flex items-center justify-between gap-3">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cobalt text-xs font-semibold text-white">0{index + 1}</span>
+                  <span className="h-px flex-1 bg-gradient-to-r from-cobalt/20 to-transparent" />
+                </div>
                 {item}
               </div>
             ))}

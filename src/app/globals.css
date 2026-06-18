@@ -79,6 +79,32 @@ body {
   animation: deck-light-sweep 2.8s ease-in-out infinite;
 }
 
+.feature-card,
+.metric-card {
+  animation: soft-rise 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.feature-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 10%, rgba(255, 255, 255, 0.65) 45%, transparent 70%);
+  opacity: 0;
+  transform: translateX(-55%);
+  transition: opacity 180ms ease, transform 520ms ease;
+}
+
+.feature-card:hover::after {
+  opacity: 1;
+  transform: translateX(55%);
+}
+
 @property --deck-angle {
   syntax: "<angle>";
   inherits: false;
@@ -101,6 +127,17 @@ body {
   }
 }
 
+@keyframes soft-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 ::selection {
   background: rgba(37, 20, 201, 0.18);
 }
@@ -108,5 +145,18 @@ body {
 @media (max-width: 768px) {
   .service-card {
     min-height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .presentation-cta,
+  .presentation-cta::after,
+  .feature-card,
+  .metric-card {
+    animation: none;
+  }
+
+  .feature-card::after {
+    display: none;
   }
 }
