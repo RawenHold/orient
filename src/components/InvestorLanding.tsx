@@ -149,7 +149,6 @@ export function InvestorLanding() {
               <p className="text-sm font-semibold uppercase text-cobalt">Market opportunity</p>
               <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">Окно входа открыто: спрос растёт быстрее, чем локальная цифровая инфраструктура.</h2>
             </div>
-            <p className="max-w-xl leading-7 text-slate-600">Цифры ниже используются как investor model: они показывают масштаб возможности и должны быть привязаны к источникам в публичном deck.</p>
           </div>
 
           <div className="mt-8 grid gap-3 md:grid-cols-4">
@@ -331,9 +330,6 @@ export function InvestorLanding() {
           <div>
             <p className="text-sm font-semibold uppercase text-cobalt">Risk register</p>
             <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">Риски не скрываем. MVP построен, чтобы проверять их дешево.</h2>
-            <p className="mt-5 text-lg leading-8 text-slate-700">
-              Самые опасные вопросы инвестора вынесены в продуктовую модель: платежи, конкуренция, качество партнёров, спрос и AI-ошибки.
-            </p>
           </div>
           <div className="grid gap-3">
             {investorRisks.map((item) => (
