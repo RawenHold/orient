@@ -7,8 +7,6 @@ import {
   CheckCircle2,
   CircleDollarSign,
   Compass,
-  ExternalLink,
-  Layers3,
   Route,
   ShieldCheck,
   Sparkles,
@@ -34,9 +32,6 @@ import {
   whyNow,
 } from "@/data/deck";
 import { PresentationCta } from "./PresentationCta";
-
-const demoHref = "https://orient-ubook-mvp.lovable.app/app.html";
-const meetingHref = "mailto:laz.dmitriy@gmail.com?subject=Orient%20UBook%20seed%20meeting";
 
 function ResponsiveTable({ children }: { children: ReactNode }) {
   return (
@@ -72,22 +67,6 @@ export function InvestorLanding() {
                   <p className="mt-2 text-sm leading-5 text-slate-600">{item.text}</p>
                 </div>
               ))}
-            </div>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href={meetingHref} className="inline-flex items-center gap-2 rounded-md bg-cobalt px-5 py-3 font-semibold text-white shadow-lift transition hover:bg-ink">
-                Запросить встречу <ArrowRight size={18} />
-              </a>
-              <Link href="/developers" className="inline-flex items-center gap-2 rounded-md border border-cobalt/20 bg-white/80 px-5 py-3 font-semibold text-cobalt backdrop-blur transition hover:bg-white">
-                Техническое ТЗ <Layers3 size={18} />
-              </Link>
-              <a
-                href={demoHref}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-md border border-cobalt/20 bg-white/80 px-5 py-3 font-semibold text-cobalt backdrop-blur transition hover:bg-white"
-              >
-                Открыть дизайн макет <ExternalLink size={18} />
-              </a>
             </div>
           </div>
         </div>
