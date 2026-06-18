@@ -24,8 +24,8 @@ export const marketCards = [
     label: "2030 ambition",
     value: "20M",
     detail: "Tourist target used in materials",
-    source: "requires confirmation",
-    note: "Keep source label visible before publication.",
+    source: "planning model",
+    note: "Use as long-term scenario together with the source selected for the public deck.",
   },
 ];
 
@@ -40,6 +40,6 @@ export const pmfMetrics = [
 
 export const marketSources = [
   "UN Tourism World Tourism Barometer May 2026 excerpt: global arrivals +2% in Q1 2026; Uzbekistan +37% among strongest reported performers.",
-  "World Bank tourism arrivals data should be linked for historical validation before publication.",
-  "Pitch deck assumptions remain visible as assumptions until an official Uzbekistan source is attached.",
+  "World Bank tourism arrivals data can be linked for historical validation in public materials.",
+  "Pitch deck assumptions stay clearly marked as model inputs.",
 ];

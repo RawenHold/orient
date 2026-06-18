@@ -5,7 +5,7 @@ import { SectionHeader } from "./SectionHeader";
 const sourceTone: Record<string, string> = {
   official: "bg-teal-50 text-teal-800 border-teal-200",
   "deck assumption": "bg-amber-50 text-amber-800 border-amber-200",
-  "requires confirmation": "bg-rose-50 text-rose-800 border-rose-200",
+  "planning model": "bg-sky-50 text-sky-800 border-sky-200",
 };
 
 export function MarketSection() {
@@ -14,7 +14,7 @@ export function MarketSection() {
       <SectionHeader
         eyebrow="Market opportunity"
         title="Рынок растёт, а локальный слой поездки всё ещё фрагментирован."
-        text="Для инвесторского блока показываем цифры с прозрачным статусом источника: official, deck assumption или requires confirmation."
+        text="Для инвесторского блока показываем цифры с прозрачным статусом источника: official, deck assumption или planning model."
       />
       <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-[1fr_1.1fr]">
         <div className="relative min-h-[420px] overflow-hidden rounded-md">

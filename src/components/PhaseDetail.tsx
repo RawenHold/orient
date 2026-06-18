@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle2, CircleAlert, Target, Wrench } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, CircleAlert, Code2, Target, TimerReset, Wrench, XCircle } from "lucide-react";
 import { phases, type Phase } from "@/data/phases";
+import { stageSpecs } from "@/data/stageSpecs";
 import { PhaseSnapshot, markerClass } from "./PhaseCards";
 
 function SpecList({ title, items, icon = "arrow" }: { title: string; items: string[]; icon?: "arrow" | "check" | "tool" }) {
@@ -24,6 +25,7 @@ function SpecList({ title, items, icon = "arrow" }: { title: string; items: stri
 export function PhaseDetail({ phase }: { phase: Phase }) {
   const previous = phases.find((item) => item.id === phase.id - 1);
   const next = phases.find((item) => item.id === phase.id + 1);
+  const spec = stageSpecs[phase.id];
 
   return (
     <>
@@ -89,6 +91,59 @@ export function PhaseDetail({ phase }: { phase: Phase }) {
           <SpecList title="Что сдаём на выходе" items={phase.deliverables} />
           <SpecList title="Инструменты и подход" items={phase.tools} icon="tool" />
           <SpecList title="Критерии приёмки" items={phase.acceptance} icon="check" />
+          {spec ? <SpecList title="Definition of Done" items={spec.strictDod} icon="check" /> : <SpecList title="Definition of Done" items={phase.dod} icon="check" />}
+          {spec ? (
+            <section className="rounded-md border border-slate-200 bg-white/[0.78] p-5">
+              <h2 className="flex items-center gap-2 text-xl font-semibold text-ink">
+                <TimerReset className="text-cobalt" size={19} /> Code review и тестирование
+              </h2>
+              <p className="mt-4 text-sm leading-6 text-slate-700">{spec.reviewQa}</p>
+            </section>
+          ) : null}
+          {spec?.notInScope.length ? (
+            <section className="rounded-md border border-slate-200 bg-white/[0.78] p-5">
+              <h2 className="flex items-center gap-2 text-xl font-semibold text-ink">
+                <XCircle className="text-amber-600" size={19} /> Что явно не делаем
+              </h2>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+                {spec.notInScope.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <XCircle className="mt-1 shrink-0 text-amber-600" size={17} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+          {spec?.apiEndpoints.length ? (
+            <section className="rounded-md border border-slate-200 bg-white/[0.78] p-5">
+              <h2 className="flex items-center gap-2 text-xl font-semibold text-ink">
+                <Code2 className="text-cobalt" size={19} /> API на выходе этапа
+              </h2>
+              <div className="mt-4 grid gap-2">
+                {spec.apiEndpoints.map((endpoint) => (
+                  <code key={endpoint} className="rounded-md bg-slate-950 px-3 py-2 text-xs font-semibold text-white sm:text-sm">
+                    {endpoint}
+                  </code>
+                ))}
+              </div>
+            </section>
+          ) : null}
+          {spec?.aiGuidelines?.length ? (
+            <section className="rounded-md border border-cobalt/20 bg-cobalt/5 p-5">
+              <h2 className="flex items-center gap-2 text-xl font-semibold text-ink">
+                <Code2 className="text-cobalt" size={19} /> AI prompt guidelines и fallback
+              </h2>
+              <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+                {spec.aiGuidelines.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <CheckCircle2 className="mt-1 shrink-0 text-lagoon" size={17} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
           <section className="rounded-md border border-slate-200 bg-white/[0.78] p-5">
             <h2 className="text-xl font-semibold text-ink">Риски и критерий перехода</h2>
             <div className="mt-4 grid gap-3">
