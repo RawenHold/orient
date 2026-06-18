@@ -21,23 +21,30 @@ export function TopNav({ active = "investor" }: TopNavProps) {
           />
         </Link>
 
-        <div className="hidden min-w-0 items-center justify-end gap-2 md:flex">
-          <Link
-            href="/"
-            className={`whitespace-nowrap rounded-md border px-3 py-2 text-sm font-semibold transition lg:px-4 ${active === "investor" ? "border-cobalt bg-cobalt text-white shadow-glass" : "border-slate-200 bg-white/80 text-slate-700 hover:border-cobalt/35"
-              }`}
+        <div className="hidden min-w-0 items-center justify-end gap-3 md:flex">
+          <div
+            className="inline-flex items-center rounded-[8px] border border-slate-200/80 bg-white/80 p-1 shadow-[0_18px_55px_rgba(34,48,89,0.10)] backdrop-blur-xl"
+            aria-label="Переключение разделов сайта"
           >
-            Для инвестора
-          </Link>
-          <Link
-            href="/developers"
-            className={`inline-flex whitespace-nowrap items-center gap-2 rounded-md border px-3 py-2 text-sm font-semibold transition lg:px-4 ${active === "developers" || active === "phases"
-              ? "border-ink bg-ink text-white shadow-glass"
-              : "border-slate-200 bg-white/80 text-slate-700 hover:border-cobalt/35"
-              }`}
-          >
-            Для разработчиков <ArrowRight className="hidden sm:block" size={16} />
-          </Link>
+            <Link
+              href="/"
+              className={`whitespace-nowrap rounded-[6px] px-3 py-2 text-sm font-semibold transition lg:px-4 ${active === "investor"
+                ? "bg-cobalt text-white shadow-glass"
+                : "text-slate-600 hover:bg-cobalt/5 hover:text-cobalt"
+                }`}
+            >
+              Для инвестора
+            </Link>
+            <Link
+              href="/developers"
+              className={`inline-flex whitespace-nowrap items-center gap-2 rounded-[6px] px-3 py-2 text-sm font-semibold transition lg:px-4 ${active === "developers" || active === "phases"
+                ? "bg-cobalt text-white shadow-glass"
+                : "text-slate-600 hover:bg-cobalt/5 hover:text-cobalt"
+                }`}
+            >
+              Для разработчиков <ArrowRight className="hidden sm:block" size={16} />
+            </Link>
+          </div>
           <a
             href="https://orient-ubook-mvp.lovable.app/app.html"
             target="_blank"

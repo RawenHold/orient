@@ -1,8 +1,7 @@
-import { ArrowUpRight, CalendarDays, Download, FileText, Sparkles } from "lucide-react";
+import { Download, FileText, MessageCircle, Sparkles } from "lucide-react";
 
 const deckHref = "/assets/orient-ubook-presentation.pdf";
-const demoHref = "https://orient-ubook-mvp.lovable.app/app.html";
-const meetingHref = "mailto:laz.dmitriy@gmail.com?subject=Orient%20UBook%20seed%20meeting";
+const telegramHref = "https://t.me/LazDmitriy";
 
 export function PresentationCta({ compact = false }: { compact?: boolean }) {
   return (
@@ -23,24 +22,21 @@ export function PresentationCta({ compact = false }: { compact?: boolean }) {
                 <span className="rounded-full border border-cobalt/15 bg-cobalt/5 px-2.5 py-1 text-xs font-semibold text-cobalt">Seed $580K</span>
               </div>
               <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600 md:text-base">
-                Быстрый доступ к встрече, investor deck и живому демо-макету. Всё, что нужно для первого разговора по раунду и пилоту.
+                Быстрый доступ к прямому контакту и investor deck. Всё, что нужно для первого разговора по раунду и пилоту.
               </p>
               <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold text-slate-500">
-                <span className="rounded-md bg-slate-100 px-2.5 py-1">Deck PDF</span>
-                <span className="rounded-md bg-slate-100 px-2.5 py-1">Demo</span>
-                <span className="rounded-md bg-slate-100 px-2.5 py-1">Founder call</span>
+                <span className="rounded-md bg-slate-100 px-2.5 py-1">Telegram</span>
+                <span className="rounded-md bg-slate-100 px-2.5 py-1">PDF deck</span>
+                <span className="rounded-md bg-slate-100 px-2.5 py-1">Seed round</span>
               </div>
             </div>
           </div>
-          <div className="grid gap-2 sm:grid-cols-3 lg:min-w-[520px] lg:grid-cols-1 xl:grid-cols-3">
-            <a href={meetingHref} className="inline-flex items-center justify-center gap-2 rounded-md bg-cobalt px-4 py-3 text-sm font-semibold text-white shadow-glass transition hover:-translate-y-0.5 hover:bg-ink">
-              Запросить встречу <CalendarDays size={16} />
+          <div className="grid gap-2 sm:grid-cols-2 lg:min-w-[390px]">
+            <a href={telegramHref} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-md bg-cobalt px-4 py-3 text-sm font-semibold text-white shadow-glass transition hover:-translate-y-0.5 hover:bg-ink">
+              Связаться <MessageCircle size={16} />
             </a>
             <a href={deckHref} download className="inline-flex items-center justify-center gap-2 rounded-md border border-cobalt/20 bg-white px-4 py-3 text-sm font-semibold text-cobalt transition hover:-translate-y-0.5 hover:bg-cobalt/5">
-              Скачать deck <Download size={16} />
-            </a>
-            <a href={demoHref} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-md border border-cobalt/20 bg-white px-4 py-3 text-sm font-semibold text-cobalt transition hover:-translate-y-0.5 hover:bg-cobalt/5">
-              Открыть демо <ArrowUpRight size={16} />
+              Скачать Презентацию <Download size={16} />
             </a>
           </div>
         </div>
