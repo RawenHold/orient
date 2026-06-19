@@ -32,17 +32,26 @@ import {
   whyNow,
 } from "@/data/deck";
 import { PresentationCta } from "./PresentationCta";
+import { SideSectionNav } from "./SideSectionNav";
 
 const investorSectionNav = [
-  { href: "#investor-problem", label: "Investor problem" },
-  { href: "#market-opportunity", label: "Market opportunity" },
-  { href: "#competitive-position", label: "Competitive position" },
-  { href: "#validation-customers", label: "Validation plan & Customers" },
-  { href: "#seed-business-model", label: "Seed round & Business model" },
-  { href: "#risk-register", label: "Risk register" },
-  { href: "#implementation-roadmap", label: "Implementation roadmap" },
-  { href: "#why-now", label: "Why now" },
-  { href: "#investor-room", label: "Investor room" },
+  { href: "#investor-problem", label: "Проблема туриста" },
+  { href: "#market-opportunity", label: "Рынок и возможность" },
+  { href: "#competitive-position", label: "Конкурентная позиция" },
+  { href: "#validation-customers", label: "Пилот и клиенты" },
+  { href: "#seed-business-model", label: "Раунд и бизнес-модель" },
+  { href: "#risk-register", label: "Карта рисков" },
+  { href: "#implementation-roadmap", label: "Дорожная карта" },
+  { href: "#why-now", label: "Почему сейчас" },
+  { href: "#investor-room", label: "Комната инвестора" },
+];
+
+const investorSectionActions = [
+  { href: "https://t.me/LazDmitriy", label: "Связаться", external: true, accent: true },
+  { href: "/assets/orient-ubook-presentation.pdf", label: "Скачать презентацию", download: true },
+  { href: "/developers", label: "Для разработчиков" },
+  { href: "/stages", label: "Этапы реализации" },
+  { href: "https://orient-ubook-mvp.lovable.app/app.html", label: "Дизайн-макет", external: true },
 ];
 
 function ResponsiveTable({ children }: { children: ReactNode }) {
@@ -53,28 +62,15 @@ function ResponsiveTable({ children }: { children: ReactNode }) {
   );
 }
 
-function InvestorSectionSwitch() {
-  return (
-    <details className="investor-section-switcher">
-      <summary className="investor-section-trigger" aria-label="Открыть навигацию по разделам">
-        Разделы
-      </summary>
-      <nav className="investor-section-note" aria-label="Разделы для инвестора">
-        <p className="investor-section-kicker">Investor memo</p>
-        {investorSectionNav.map((item) => (
-          <a key={item.href} href={item.href} className="investor-section-link">
-            <span>{item.label}</span>
-          </a>
-        ))}
-      </nav>
-    </details>
-  );
-}
-
 export function InvestorLanding() {
   return (
     <>
-      <InvestorSectionSwitch />
+      <SideSectionNav
+        actions={investorSectionActions}
+        ariaLabel="Разделы и действия для инвестора"
+        items={investorSectionNav}
+        kicker="Разделы инвестора"
+      />
 
       <section id="top" className="relative min-h-[92vh] overflow-hidden pt-[72px]">
         <div className="absolute inset-0 bg-[url('/assets/hero-bg.jpg')] bg-cover bg-center" />

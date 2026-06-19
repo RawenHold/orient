@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2, Code2, Database, GitPullRequestArrow, Search,
 import { DeveloperSearch } from "@/components/DeveloperSearch";
 import { Footer } from "@/components/Footer";
 import { ServiceMatrix } from "@/components/ServiceMatrix";
+import { SideSectionNav } from "@/components/SideSectionNav";
 import { StageTimeline } from "@/components/StageTimeline";
 import { TopNav } from "@/components/TopNav";
 import { architectureNotes, dataEntities, dataRelations, glossary, onboardingSteps, qaStrategy, quickNav, readyChecklist, techStack } from "@/data/developer";
@@ -13,11 +14,29 @@ const quickNavHref: Record<string, string> = {
   DB: "#db",
   DevOps: "#tech-stack",
   QA: "#qa",
-  AI: "#ai",
+  AI: "#glossary",
   Роли: "#stages",
   API: "#stages",
   Этапы: "#stages",
 };
+
+const developerSectionNav = [
+  { href: "#developer-intro", label: "Введение в ТЗ" },
+  { href: "#tech-stack", label: "Стек технологий" },
+  { href: "#db", label: "Карта данных" },
+  { href: "#stages", label: "Этапы реализации" },
+  { href: "#developer-search", label: "Поиск по ТЗ" },
+  { href: "#services-map", label: "Карта услуг MVP" },
+  { href: "#qa", label: "Онбординг и QA" },
+  { href: "#glossary", label: "Глоссарий" },
+];
+
+const developerSectionActions = [
+  { href: "/stages", label: "Все этапы", accent: true },
+  { href: "/", label: "Для инвестора" },
+  { href: "https://orient-ubook-mvp.lovable.app/app.html", label: "Дизайн-макет", external: true },
+  { href: "https://t.me/LazDmitriy", label: "Связаться", external: true },
+];
 
 function SectionTitle({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {
   return (
@@ -33,7 +52,13 @@ export default function DevelopersPage() {
   return (
     <main>
       <TopNav active="developers" />
-      <section className="bg-ceramic px-4 pb-12 pt-32 md:px-8">
+      <SideSectionNav
+        actions={developerSectionActions}
+        ariaLabel="Разделы и действия для разработчиков"
+        items={developerSectionNav}
+        kicker="Разделы разработки"
+      />
+      <section id="developer-intro" className="scroll-mt-24 bg-ceramic px-4 pb-12 pt-32 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.08fr_0.92fr]">
           <div>
             <p className="flex items-center gap-2 text-sm font-semibold uppercase text-cobalt">
@@ -142,7 +167,9 @@ export default function DevelopersPage() {
         <DeveloperSearch />
       </section>
 
-      <ServiceMatrix />
+      <div id="services-map" className="scroll-mt-24">
+        <ServiceMatrix />
+      </div>
 
       <section id="qa" className="bg-white px-4 py-14 md:px-8">
         <div className="mx-auto max-w-7xl">
@@ -193,7 +220,7 @@ export default function DevelopersPage() {
         </div>
       </section>
 
-      <section id="ai" className="bg-milk px-4 py-14 md:px-8">
+      <section id="glossary" className="scroll-mt-24 bg-milk px-4 py-14 md:px-8">
         <div className="mx-auto max-w-7xl">
           <SectionTitle
             eyebrow="Glossary"
