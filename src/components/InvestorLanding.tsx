@@ -72,11 +72,11 @@ export function InvestorLanding() {
         kicker="Разделы инвестора"
       />
 
-      <section id="top" className="relative min-h-[92vh] overflow-hidden pt-[72px]">
+      <section id="top" className="relative min-h-[92vh] overflow-hidden pt-[112px] md:pt-[72px]">
         <div className="absolute inset-0 bg-[url('/assets/hero-bg.jpg')] bg-cover bg-center" />
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/92 to-white/30" />
         <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-milk to-transparent" />
-        <div className="relative mx-auto grid min-h-[calc(92vh-72px)] max-w-7xl content-center px-4 py-14 md:px-8">
+        <div className="relative mx-auto grid min-h-[calc(92vh-112px)] max-w-7xl content-center px-4 py-14 md:min-h-[calc(92vh-72px)] md:px-8">
           <div className="max-w-5xl">
             <p className="mb-5 inline-flex max-w-full items-center gap-2 rounded-md border border-cobalt/20 bg-white/75 px-3 py-2 text-sm font-semibold text-cobalt backdrop-blur">
               <Sparkles size={16} /> Central Asia travel concierge layer

@@ -108,7 +108,7 @@ body {
 .investor-section-switcher {
   position: fixed;
   left: 10px;
-  top: 86px;
+  top: 128px;
   z-index: 45;
   display: block;
   transform: none;
@@ -160,9 +160,9 @@ body {
 .investor-section-note {
   position: fixed;
   left: 58px;
-  top: 86px;
+  top: 128px;
   width: min(310px, calc(100vw - 76px));
-  max-height: calc(100vh - 104px);
+  max-height: calc(100vh - 146px);
   overflow: hidden;
   overflow-y: auto;
   border: 1px solid rgba(37, 20, 201, 0.16);
