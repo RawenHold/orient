@@ -1,16 +1,24 @@
-export const quickNav = ["Backend", "Frontend", "DB", "DevOps", "QA", "AI", "Роли", "API", "Этапы"];
+export const quickNav = ["Backend", "Frontend", "DB", "DevOps", "QA", "AI", "Роли", "Глоссарий"];
 
 export const techStack = [
-  { layer: "Frontend", value: "Next.js 14 App Router + TypeScript + Tailwind", note: "SSR/SSG, быстрые публичные страницы, единый UI для investor, tourist и admin." },
-  { layer: "Backend", value: "NestJS + TypeScript + Prisma ORM", note: "Модульный монолит с явными доменами и строгими DTO." },
-  { layer: "Database", value: "PostgreSQL primary + Redis cache/sessions", note: "PostgreSQL хранит бизнес-данные, Redis держит сессии, OTP и быстрый cache." },
-  { layer: "Auth", value: "NextAuth или custom JWT + OAuth", note: "Google, Yandex, Apple, email/phone OTP; роли закрываются RBAC." },
-  { layer: "AI", value: "OpenAI API GPT-4o + RAG", note: "Ответы строятся на внутренней базе знаний, статусах услуг и локальных правилах." },
-  { layer: "Storage", value: "Cloudflare R2", note: "Фото, ваучеры, подтверждения партнёров и будущие документы заявок." },
-  { layer: "Infra", value: "Docker Compose -> Railway/Render -> VPS", note: "Одинаковый dev-контур, staging для пилота и управляемый production." },
-  { layer: "CI/CD", value: "GitHub Actions", note: "Lint, typecheck, tests, build, migrations и staging deploy." },
-  { layer: "Monitoring", value: "Sentry + PostHog", note: "Ошибки, воронки, события заявок и поведение пользователей." },
-  { layer: "Payments MVP", value: "Manual confirmation; Payme/Click post-MVP", note: "В MVP не обещаем автоматическую оплату там, где юридика и партнёры не готовы." },
+  { layer: "Frontend", value: "Next.js 14 App Router + TypeScript + Tailwind", note: "SSR/ISR для SEO, единый UI для tourist/admin/investor.", why: "Менять нельзя: сайт уже деплоится на Vercel." },
+  { layer: "Backend", value: "NestJS + TypeScript + Prisma ORM", note: "Модульный монолит с явными доменами и строгими DTO.", why: "До Series A архитектура не усложняется микросервисами." },
+  { layer: "Database", value: "PostgreSQL primary + Redis cache/sessions", note: "PostgreSQL хранит бизнес-данные, Redis держит сессии, OTP TTL 5 минут и кеш справочников.", why: "Так проще держать статусы, RBAC и аудит в одном контуре." },
+  { layer: "Auth", value: "NextAuth или custom JWT + OAuth", note: "Google, Yandex, Apple, email/phone OTP; роли закрываются RBAC.", why: "OAuth-провайдеры фиксируются при реализации этапа 1." },
+  { layer: "AI", value: "OpenAI API GPT-4o + RAG", note: "Ответы только с source; без подтверждённого контекста -> handoff в поддержку.", why: "Модель заменяема, RAG-архитектура нет." },
+  { layer: "Storage", value: "Cloudflare R2", note: "Фото, ваучеры, подтверждения партнёров и будущие документы заявок.", why: "Дешевле S3, CDN включён, подходит для MVP." },
+  { layer: "Infra", value: "Docker Compose -> Railway/Render -> VPS", note: "Одинаковый dev-контур, staging для пилота и управляемый production.", why: "Kubernetes не нужен до зрелого production load." },
+  { layer: "CI/CD", value: "GitHub Actions", note: "Lint, typecheck, tests, build, migrations и staging deploy.", why: "PR не проходит без автоматических проверок." },
+  { layer: "Monitoring", value: "Sentry + PostHog", note: "Ошибки, воронки, события заявок и поведение пользователей.", why: "PMF проверяется событиями, а не мнениями команды." },
+  { layer: "Payments MVP", value: "Manual payment record; Payme/Click post-MVP", note: "В MVP нет auto-checkout. Support фиксирует оплату вручную в AdminPanel.", why: "Payme/Click подключаются только после юрлица, KYB, refund и reconciliation." },
+];
+
+export const excludedStack = [
+  "Микросервисы — после Series A.",
+  "GraphQL — REST достаточно до 10K DAU.",
+  "Kubernetes — Docker Compose -> Railway/Render до пилота.",
+  "Собственный AI — только API + RAG.",
+  "Realtime payments — этап 10.",
 ];
 
 export const architectureNotes = [
@@ -19,35 +27,62 @@ export const architectureNotes = [
   "Внешние интеграции проходят через backend. Frontend не общается напрямую с OTA, платёжками, AI или поставщиками.",
 ];
 
-export const dataEntities = [
-  { name: "User", fields: ["id UUID required", "email string optional", "phone string optional", "role enum required", "createdAt date"] },
-  { name: "UserProfile", fields: ["userId UUID required", "fullName string", "language enum", "country string", "preferences json"] },
-  { name: "AuthIdentity", fields: ["userId UUID required", "provider enum", "providerId string", "verifiedAt date"] },
-  { name: "Request", fields: ["id UUID required", "userId UUID required", "serviceId UUID required", "status enum", "payload json"] },
-  { name: "Order", fields: ["id UUID required", "requestId UUID required", "amount decimal", "currency string", "paymentStatus enum"] },
-  { name: "Service", fields: ["id UUID required", "type enum", "title string", "mvpStatus enum", "phase number"] },
-  { name: "Supplier", fields: ["id UUID required", "type enum", "legalName string", "contact json", "verificationStatus enum"] },
-  { name: "AuditLog", fields: ["id UUID required", "actorId UUID", "entityType string", "entityId UUID", "diff json"] },
-  { name: "SupportCase", fields: ["id UUID required", "requestId UUID optional", "userId UUID", "priority enum", "status enum"] },
-  { name: "ContentPage", fields: ["id UUID required", "slug string", "locale string", "status enum", "seo json"] },
+export const dataRelations = [
+  "Request не равен Order: заявка живёт без оплаты и подтверждения.",
+  "Supplier не равен Partner: Partner появляется только после договора и KYC/KYB.",
+  "Каждый статус-переход пишет AuditLog. Без исключений.",
+  "ContentPage питает публичные страницы и RAG-индекс AI.",
 ];
 
-export const dataRelations = [
-  "User -> UserProfile -> AuthIdentity",
-  "User -> Request -> Order",
-  "Request -> Service -> Supplier",
-  "Request -> SupportCase",
-  "Любая смена статуса -> AuditLog",
-  "ContentPage питает публичные страницы и RAG-базу AI.",
+export const uzDevContext = [
+  {
+    title: "Платёжный контур",
+    items: [
+      "MVP этапы 0-7: только manual payment record.",
+      "Payme и Click подключаются на этапе 10 после юрлица/IT Park, KYB и договора с PSP.",
+      "Stripe недоступен напрямую из UZ: для международных платежей нужна структура UAE или Kazakhstan.",
+      "RateHawk и Ostrovok рассматриваются как post-MVP backup для гостиниц и туров.",
+    ],
+  },
+  {
+    title: "Языки",
+    items: [
+      "ru: основной язык туристов из СНГ; AI-консьерж отвечает без fallback на en.",
+      "uz: официальный язык; партнёрские шаблоны и локальный контент.",
+      "en: международная аудитория, B2B pitch и инвесторские материалы.",
+      "Реализация: next-intl или i18next; RAG-база с chunk-индексами по языкам.",
+    ],
+  },
+  {
+    title: "Юридика и IT Park",
+    items: [
+      "IT Park Uzbekistan: 0% налог на прибыль для IT-компаний при соответствии критериям.",
+      "Платёжная структура через IT Park требует отдельного legal review.",
+      "Договоры с партнёрами должны закрывать SLA, refund, ответственность и KYC/KYB.",
+    ],
+  },
+  {
+    title: "Поставщики и интеграции",
+    items: [
+      "Этап 8+: RateHawk API, Ostrovok API, GPT-4o/RAG, Cloudflare R2.",
+      "Frontend не ходит напрямую во внешние API: все интеграции только через backend.",
+      "Если внешний API недоступен, работает assisted flow через support.",
+    ],
+  },
+];
+
+export const onboardingPrerequisites = [
+  "Node.js 20+ / Docker Desktop / Git.",
+  "Доступ к репозиторию и .env.example.",
+  "Прочитан текущий этап в /stages/[N].",
 ];
 
 export const onboardingSteps = [
-  "Прочитать README, .env.example, текущий этап и правила MVP scope.",
-  "Поднять проект через Docker Compose: frontend, backend, PostgreSQL, Redis.",
-  "Запустить миграции Prisma и seed: роли, категории услуг, тестовый admin.",
-  "Проверить health endpoints и локальный login/register flow.",
-  "Пройти сценарий: регистрация -> заявка -> admin -> смена статуса -> audit log.",
-  "Взять задачу только после понимания acceptance criteria и границы: что не входит в этап.",
+  { task: "Прочитать README, .env.example, текущий этап и правила MVP scope.", result: "Знаю, что строю и что не входит в этап." },
+  { task: "Поднять проект через Docker Compose: frontend, backend, PostgreSQL, Redis.", result: "Все сервисы зелёные, health endpoints отвечают." },
+  { task: "Запустить миграции Prisma и seed: роли, категории услуг, тестовый admin.", result: "Admin login работает, данные есть в БД." },
+  { task: "Пройти flow: регистрация -> заявка -> admin -> статус -> audit log.", result: "Вижу данные в таблицах, AuditLog пишется." },
+  { task: "Взять задачу только после понимания acceptance criteria.", result: "Понимаю IN scope и OUT of scope задачи." },
 ];
 
 export const readyChecklist = [
@@ -78,4 +113,6 @@ export const glossary = [
   { term: "API integration", definition: "Прямой обмен данными с внешним сервисом: доступность, бронь, оплата, статус." },
   { term: "Assisted flow", definition: "Сценарий, где платформа помогает через заявку или support, но не завершает транзакцию автоматически." },
   { term: "PMF", definition: "Для Orient UBook: NPS >40, 1 000 заявок, 12-18% conversion to confirmed service, 50+ активных партнёров и повторные заявки." },
+  { term: "MVP Status", definition: "Статус услуги в матрице: работает в MVP, support/ссылка, информация сейчас или после MVP. Нельзя менять без согласования с PM и инвестором." },
+  { term: "IT Park Mode", definition: "Налоговый режим Orient UBook: 0% налог на прибыль для IT-компаний при соответствии критериям. Влияет на договоры и платёжный контур." },
 ];

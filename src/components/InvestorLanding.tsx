@@ -87,6 +87,9 @@ export function InvestorLanding() {
             <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-700 md:text-xl">
               Жильё, гиды, трансферы, оплата, язык и поддержка живут в разных сервисах и чатах. Orient UBook объединяет их в один мультиинструмент с AI-консьержем и понятным маршрутом от прилёта до отъезда гостя.
             </p>
+            <p className="mt-5 max-w-3xl rounded-md border border-gold/30 bg-white/78 px-4 py-3 text-base font-semibold leading-7 text-ink shadow-sm backdrop-blur">
+              Узбекистан вошёл в топ-20 самых быстрорастущих направлений мира. Первый, кто займёт цифровой слой поездки, занимает рынок.
+            </p>
             <div className="mt-8 grid max-w-4xl gap-3 sm:grid-cols-3">
               {heroProof.map((item) => (
                 <div key={item.label} className="glass-panel p-4">
@@ -135,6 +138,10 @@ export function InvestorLanding() {
                   <div className="rounded-md bg-cobalt/5 p-3">
                     <p className="text-xs font-semibold uppercase text-cobalt">стоимость проблемы</p>
                     <p className="mt-1 text-sm leading-6 text-slate-700">{point.cost}</p>
+                  </div>
+                  <div className="rounded-md border border-gold/25 bg-gold/10 p-3">
+                    <p className="text-xs font-semibold uppercase text-gold">почему это важно</p>
+                    <p className="mt-1 text-sm leading-6 text-slate-700">{point.proof}</p>
                   </div>
                 </div>
               </article>
@@ -201,14 +208,23 @@ export function InvestorLanding() {
             ))}
           </div>
 
-          <div className="mt-6 grid gap-3 md:grid-cols-4">
-            {deckMetrics.map((metric, index) => (
-              <div key={metric.label} className="feature-card rounded-md border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-cobalt/25 hover:shadow-glass" style={{ animationDelay: `${index * 60}ms` }}>
-                <p className="text-3xl font-semibold text-ink md:text-4xl">{metric.value}</p>
-                <p className="mt-2 font-semibold text-slate-700">{metric.label}</p>
-                <p className="mt-3 text-xs leading-5 text-slate-500">{metric.note}</p>
-              </div>
-            ))}
+          <div className="mt-6 grid gap-3 lg:grid-cols-[1.05fr_1.4fr]">
+            <div className="feature-card relative overflow-hidden rounded-md border border-cobalt/20 bg-white p-6 shadow-glass">
+              <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-lagoon/15 blur-2xl" />
+              <p className="relative text-sm font-semibold uppercase text-cobalt">главная цифра рынка</p>
+              <p className="relative mt-4 text-6xl font-semibold leading-none text-ink md:text-7xl">{deckMetrics[0].value}</p>
+              <p className="relative mt-3 text-2xl font-semibold text-ink">{deckMetrics[0].label}</p>
+              <p className="relative mt-4 text-sm leading-6 text-slate-600">{deckMetrics[0].note}</p>
+            </div>
+            <div className="grid gap-3 md:grid-cols-3">
+              {deckMetrics.slice(1).map((metric, index) => (
+                <div key={metric.label} className="feature-card rounded-md border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-cobalt/25 hover:shadow-glass" style={{ animationDelay: `${index * 60}ms` }}>
+                  <p className="text-3xl font-semibold text-ink md:text-4xl">{metric.value}</p>
+                  <p className="mt-2 font-semibold text-slate-700">{metric.label}</p>
+                  <p className="mt-3 text-xs leading-5 text-slate-500">{metric.note}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -275,7 +291,12 @@ export function InvestorLanding() {
                     <h3 className="font-semibold text-ink">{segment.title}</h3>
                     <span className="rounded-md bg-cobalt/[0.08] px-2.5 py-1 text-xs font-semibold text-cobalt">{segment.check}</span>
                   </div>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">{segment.text}</p>
+                  <div className="mt-4 grid gap-2 text-sm leading-6 text-slate-700">
+                    <p><span className="font-semibold text-ink">Кто: </span>{segment.who}</p>
+                    <p><span className="font-semibold text-ink">Боль: </span>{segment.pain}</p>
+                    <p className="rounded-md bg-cobalt/5 p-3"><span className="font-semibold text-cobalt">Почему покупает: </span>{segment.why}</p>
+                    <p><span className="font-semibold text-ink">Repeat: </span>{segment.repeat}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -316,6 +337,9 @@ export function InvestorLanding() {
               <div className="glass-panel p-6">
                 <p className="text-sm font-semibold uppercase text-cobalt">Business model</p>
                 <h2 className="mt-3 text-3xl font-semibold text-ink">Экономика строится на заявках, take rate и партнёрской подписке.</h2>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  Структура на основе unit economics travel-маркетплейсов при take rate 10-15% и 1 000+ подтверждённых заявок в месяц.
+                </p>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {revenueStreams.map((stream) => (
                     <div key={stream.title} className="rounded-md border border-slate-200 bg-white/75 p-4">
@@ -324,6 +348,7 @@ export function InvestorLanding() {
                         <span className="text-2xl font-semibold text-cobalt">{stream.value}</span>
                       </div>
                       <p className="mt-2 text-sm leading-6 text-slate-600">{stream.text}</p>
+                      <p className="mt-3 rounded-md bg-gold/10 p-3 text-xs font-semibold leading-5 text-slate-700">{stream.activation}</p>
                     </div>
                   ))}
                 </div>
@@ -361,6 +386,9 @@ export function InvestorLanding() {
                 ))}
               </tbody>
             </ResponsiveTable>
+            <p className="mt-3 rounded-md border border-slate-200 bg-white p-4 text-sm leading-6 text-slate-600">
+              Допущение модели: средний чек $150 и take rate 12%. Реальные цифры фиксируются после 90-дневного пилота.
+            </p>
           </div>
         </div>
       </section>
@@ -406,6 +434,9 @@ export function InvestorLanding() {
                 <p className="text-sm font-semibold text-cobalt">{step.period}</p>
                 <h3 className="mt-3 text-xl font-semibold text-ink">{step.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{step.text}</p>
+                <p className="mt-4 rounded-md border border-cobalt/15 bg-white/70 p-3 text-sm leading-6 text-slate-700">
+                  <span className="font-semibold text-cobalt">Что получим: </span>{step.outcome}
+                </p>
               </article>
             ))}
           </div>
@@ -439,12 +470,13 @@ export function InvestorLanding() {
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
             {whyNow.map((item, index) => (
-              <div key={item} className="feature-card group rounded-md border border-slate-200 bg-white/85 p-5 text-sm leading-6 text-slate-700 transition hover:-translate-y-1 hover:border-cobalt/25 hover:shadow-glass" style={{ animationDelay: `${index * 70}ms` }}>
+              <div key={item.text} className="feature-card group rounded-md border border-slate-200 bg-white/85 p-5 text-sm leading-6 text-slate-700 transition hover:-translate-y-1 hover:border-cobalt/25 hover:shadow-glass" style={{ animationDelay: `${index * 70}ms` }}>
                 <div className="mb-4 flex items-center justify-between gap-3">
                   <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cobalt text-xs font-semibold text-white">0{index + 1}</span>
                   <span className="h-px flex-1 bg-gradient-to-r from-cobalt/20 to-transparent" />
                 </div>
-                {item}
+                <p>{item.text}</p>
+                <p className="mt-4 rounded-md bg-cobalt/5 p-3 text-xs font-semibold leading-5 text-cobalt">{item.proof}</p>
               </div>
             ))}
           </div>
@@ -452,7 +484,29 @@ export function InvestorLanding() {
       </section>
 
       <section id="investor-room" className="scroll-mt-24 bg-white px-4 py-16 md:px-8">
-        <div className="mx-auto max-w-5xl">
+        <div className="mx-auto grid max-w-5xl gap-4">
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="glass-panel p-5">
+              <p className="text-sm font-semibold uppercase text-cobalt">Команда</p>
+              <h2 className="mt-2 text-2xl font-semibold text-ink">Ташкент-based команда.</h2>
+              <div className="mt-4 grid gap-3 text-sm leading-6 text-slate-700">
+                <p><span className="font-semibold text-ink">Dmitriy Laz — Founder / Product.</span> Ведёт продуктовую концепцию, партнёрскую модель, инвестиционную упаковку и запуск MVP в Ташкенте.</p>
+                <p><span className="font-semibold text-ink">Открытая позиция: CTO / Lead Developer.</span> Нужен технический лидер для backend, архитектуры, качества и команды первых инженеров.</p>
+                <p className="rounded-md bg-cobalt/5 p-3 font-semibold text-cobalt">Продукт строится внутри рынка, а не снаружи.</p>
+              </div>
+            </div>
+            <div className="glass-panel p-5">
+              <p className="text-sm font-semibold uppercase text-cobalt">Текущий статус</p>
+              <h2 className="mt-2 text-2xl font-semibold text-ink">Готово для первого due diligence.</h2>
+              <div className="mt-4 grid gap-2">
+                {["Spec-site, investor deck, интерактивное ТЗ", "13-этапный roadmap с acceptance criteria", "Service status matrix: 23 услуги и 4 статуса", "Дизайн-макет MVP на lovable.app", "IT Park-совместимая структура"].map((item) => (
+                  <p key={item} className="flex gap-2 rounded-md bg-white/75 p-3 text-sm leading-6 text-slate-700">
+                    <CheckCircle2 className="mt-1 shrink-0 text-lagoon" size={16} /> {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
           <PresentationCta />
         </div>
       </section>

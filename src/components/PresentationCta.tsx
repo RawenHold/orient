@@ -1,4 +1,5 @@
-import { Download, FileText, MessageCircle, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Download, FileText, MessageCircle, Sparkles } from "lucide-react";
 
 const deckHref = "/assets/orient-ubook-presentation.pdf";
 const telegramHref = "https://t.me/LazDmitriy";
@@ -31,13 +32,16 @@ export function PresentationCta({ compact = false }: { compact?: boolean }) {
               </div>
             </div>
           </div>
-          <div className="grid gap-2 sm:grid-cols-2 lg:min-w-[390px]">
+          <div className="grid gap-2 sm:grid-cols-3 lg:min-w-[560px]">
             <a href={telegramHref} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center gap-2 rounded-md bg-cobalt px-4 py-3 text-sm font-semibold text-white shadow-glass transition hover:-translate-y-0.5 hover:bg-ink">
               Связаться <MessageCircle size={16} />
             </a>
             <a href={deckHref} download className="inline-flex items-center justify-center gap-2 rounded-md border border-cobalt/20 bg-white px-4 py-3 text-sm font-semibold text-cobalt transition hover:-translate-y-0.5 hover:bg-cobalt/5">
               Скачать Презентацию <Download size={16} />
             </a>
+            <Link href="/stages" className="inline-flex items-center justify-center gap-2 rounded-md border border-cobalt/20 bg-white px-4 py-3 text-sm font-semibold text-cobalt transition hover:-translate-y-0.5 hover:bg-cobalt/5">
+              Этапы реализации <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </div>
