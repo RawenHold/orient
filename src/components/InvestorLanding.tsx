@@ -82,7 +82,7 @@ export function InvestorLanding() {
               <Sparkles size={16} /> Central Asia travel concierge layer
             </p>
             <h1 className="font-display text-4xl leading-[1.04] text-ink sm:text-5xl md:text-7xl">
-              Турпоток в Узбекистан вырос на 73% к допандемийному уровню. Цифровой инфраструктуры под него до сих пор нет.
+              Туризм в Узбекистане растёт быстрее, чем его цифровая инфраструктура.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-700 md:text-xl">
               По данным UN Tourism (UNWTO, декабрь 2025), Узбекистан — один из 7 самых быстрорастущих туристических рынков планеты. Турист уже здесь. Но его поездку по-прежнему собирают вручную: жильё в одном сервисе, гид в Telegram, трансфер через знакомых, оплата в трёх валютах.
@@ -513,28 +513,6 @@ export function InvestorLanding() {
 
       <section id="investor-room" className="scroll-mt-24 bg-white px-4 py-16 md:px-8">
         <div className="mx-auto grid max-w-5xl gap-4">
-          <div className="grid gap-4 md:grid-cols-2">
-            <div className="glass-panel p-5">
-              <p className="text-sm font-semibold uppercase text-cobalt">Команда</p>
-              <h2 className="mt-2 text-2xl font-semibold text-ink">Команда строит продукт внутри рынка.</h2>
-              <div className="mt-4 grid gap-3 text-sm leading-6 text-slate-700">
-                <p><span className="font-semibold text-ink">Dmitriy Laz — Founder / Product.</span> Спроектировал продуктовую модель, партнёрскую сеть, инвестиционную упаковку и техническое задание MVP — находясь в Ташкенте, на том же рынке, который продукт обслуживает.</p>
-                <p><span className="font-semibold text-ink">Найм CTO / Lead Developer встроен в план раунда, а не является пробелом команды.</span> 45% средств раунда ($261K) зарезервированы под продукт и разработку, включая технического лидера и первую инженерную команду.</p>
-                <p className="rounded-md bg-cobalt/5 p-3 font-semibold text-cobalt">Продуктовая и партнёрская модель валидируется до найма дорогой технической команды — раунд тратится по приоритету риска, а не по шаблону.</p>
-              </div>
-            </div>
-            <div className="glass-panel p-5">
-              <p className="text-sm font-semibold uppercase text-cobalt">Текущий статус</p>
-              <h2 className="mt-2 text-2xl font-semibold text-ink">Готово для первого due diligence.</h2>
-              <div className="mt-4 grid gap-2">
-                {["Spec-site, investor deck, интерактивное ТЗ", "13-этапный roadmap с acceptance criteria", "Service status matrix: 23 услуги и 4 статуса", "Дизайн-макет MVP на lovable.app", "IT Park-совместимая структура"].map((item) => (
-                  <p key={item} className="flex gap-2 rounded-md bg-white/75 p-3 text-sm leading-6 text-slate-700">
-                    <CheckCircle2 className="mt-1 shrink-0 text-lagoon" size={16} /> {item}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
           <PresentationCta />
         </div>
       </section>
