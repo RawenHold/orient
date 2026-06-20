@@ -19,7 +19,7 @@ export function PresentationCta({ compact = false }: { compact?: boolean }) {
             </span>
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <p className="text-xl font-semibold text-ink">Investor room</p>
+                <p className="text-xl font-semibold text-ink">Комната инвестора</p>
                 <span className="rounded-full border border-cobalt/15 bg-cobalt/5 px-2.5 py-1 text-xs font-semibold text-cobalt">Seed $580K</span>
               </div>
               <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600 md:text-base">
@@ -27,8 +27,8 @@ export function PresentationCta({ compact = false }: { compact?: boolean }) {
               </p>
               <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold text-slate-500">
                 <span className="rounded-md bg-slate-100 px-2.5 py-1">Telegram</span>
-                <span className="rounded-md bg-slate-100 px-2.5 py-1">PDF deck</span>
-                <span className="rounded-md bg-slate-100 px-2.5 py-1">Seed round</span>
+                <span className="rounded-md bg-slate-100 px-2.5 py-1">Презентация PDF</span>
+                <span className="rounded-md bg-slate-100 px-2.5 py-1">Seed-раунд</span>
               </div>
             </div>
           </div>

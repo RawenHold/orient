@@ -12,7 +12,7 @@ export function MarketSection() {
   return (
     <section className="bg-white px-4 py-20 md:px-8">
       <SectionHeader
-        eyebrow="Market opportunity"
+        eyebrow="Рынок и возможность"
         title="Рынок растёт, а локальный слой поездки всё ещё фрагментирован."
         text="Для инвесторского блока показываем цифры с прозрачным статусом источника: official, deck assumption или planning model."
       />
@@ -21,8 +21,8 @@ export function MarketSection() {
           <Image src="/assets/registan.jpg" alt="Registan, Samarkand" fill className="object-cover" sizes="(min-width: 1024px) 45vw, 100vw" />
           <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
           <div className="absolute bottom-0 p-6 text-white">
-            <p className="text-sm font-semibold uppercase text-white/80">Tourism platform thesis</p>
-            <h3 className="mt-2 text-3xl font-semibold">Uzbekistan needs a concierge layer between discovery and booking.</h3>
+            <p className="text-sm font-semibold uppercase text-white/80">Тезис tourism platform</p>
+            <h3 className="mt-2 text-3xl font-semibold">Узбекистану нужен консьерж-слой между поиском, заявкой и реальной поездкой.</h3>
           </div>
         </div>
         <div className="grid gap-4 sm:grid-cols-2">

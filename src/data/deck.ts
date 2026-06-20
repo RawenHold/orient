@@ -1,14 +1,14 @@
 export const heroProof = [
-  { label: "Seed round", value: "$580K", text: "18 месяцев runway на MVP, партнёрскую сеть, пилот и первые продажи." },
-  { label: "MVP focus", value: "90 дней", text: "Проверяем заявки, поддержку, партнёров, конверсию и повторный спрос." },
-  { label: "PMF gate", value: "1 000+", text: "Целевой порог заявок до перехода к прямым оплатам, API и mobile." },
+  { label: "Seed-раунд", value: "$580K", text: "18 месяцев runway (запас финансирования) на MVP, партнёрскую сеть, пилот и первые продажи." },
+  { label: "Фокус MVP", value: "90 дней", text: "Проверяем заявки, поддержку, партнёров, конверсию и повторный спрос." },
+  { label: "Порог PMF", value: "1 000+", text: "PMF (product-market fit) проверяется до перехода к прямым оплатам, API и mobile." },
 ];
 
 export const deckMetrics = [
-  { value: "$8.4B", label: "TAM туристического GMV", note: "Модель: 11.7M путешественников x $720 средний spend." },
-  { value: "11.7M", label: "deck model 2025", note: "Плановая модель; UNWTO фиксирует Узбекистан в топ-20 быстрорастущих направлений 2023-2024." },
+  { value: "$8.4B", label: "TAM туристического GMV", note: "TAM (total addressable market — весь доступный рынок) = 11.7M путешественников x $720 средний чек на поездку. Источник базы: Госкомстат Узбекистана и UN Tourism / UNWTO, 2024-2025. GMV (gross merchandise value — объём транзакций до комиссии) здесь означает услуги, которые Orient UBook способен агрегировать через concierge-layer." },
+  { value: "11.7M", label: "прогноз 2025", note: "Прогноз на основе фактической динамики января-ноября 2025: 10.7M по данным UN Tourism / UNWTO." },
   { value: "20M", label: "ориентир к 2030", note: "Целевой сценарий роста inbound и внутреннего туризма." },
-  { value: "$48M", label: "SOM net revenue Y5", note: "Консервативный сценарий после расширения вертикалей и партнёрской сети." },
+  { value: "$48M", label: "SOM net revenue Y5", note: "SOM (serviceable obtainable market — реалистично достижимая доля рынка) после расширения вертикалей и партнёрской сети." },
 ];
 
 export const problemJourney = {
@@ -26,8 +26,8 @@ export const painPoints = [
 export const competitorRows = [
   { label: "Локальный контекст", orient: "Высокий", booking: "Низкий", getYourGuide: "Средний", yandex: "Средний", agencies: "Высокий" },
   { label: "AI-консьерж", orient: "Да", booking: "Нет", getYourGuide: "Нет", yandex: "Ограниченно", agencies: "Нет" },
-  { label: "Central Asia-first", orient: "Да", booking: "Нет", getYourGuide: "Нет", yandex: "Нет", agencies: "Частично" },
-  { label: "End-to-end поездка", orient: "Да", booking: "Нет", getYourGuide: "Частично", yandex: "Частично", agencies: "Вручную" },
+  { label: "Фокус на Центральной Азии", orient: "Да", booking: "Нет", getYourGuide: "Нет", yandex: "Нет", agencies: "Частично" },
+  { label: "Поездка от начала до конца", orient: "Да", booking: "Нет", getYourGuide: "Частично", yandex: "Частично", agencies: "Вручную" },
   { label: "Партнёрская модель", orient: "Да", booking: "Ограниченно", getYourGuide: "Да", yandex: "Ограниченно", agencies: "Офлайн" },
 ];
 
@@ -47,10 +47,11 @@ export const solutionPillars = [
 ];
 
 export const marketTimeline = [
-  { year: "2019", value: "5.3M", text: "доковидный пик туристического потока" },
+  { year: "2019", value: "6.7M", text: "допандемийный пик, Госкомстат Узбекистана" },
   { year: "2021", value: "1.8M", text: "нижняя точка после пандемии" },
   { year: "2023", value: "6.7M", text: "восстановление туристического потока" },
-  { year: "2025", value: "11.7M", text: "deck model для окна запуска" },
+  { year: "2024", value: "8.2M", text: "факт, Госкомстат Узбекистана" },
+  { year: "2025", value: "11.7M", text: "прогноз на основе фактической динамики января-ноября 2025" },
   { year: "2030", value: "20M", text: "целевой сценарий роста рынка" },
 ];
 
@@ -64,7 +65,7 @@ export const validationItems = [
   { title: "Готовые артефакты", text: "Investor deck, интерактивное ТЗ, карта 13 этапов, статусная матрица услуг и публичный spec-site. Всё готово для due diligence, юриста и исполнителя." },
   { title: "Партнёрская подготовка", text: "Шорт-лист 10 локальных партнёров: бутик-отели Ташкента, гиды Самарканда, трансферы Ташкент-Самарканд-Бухара. Вход: договор, KYC/KYB, SLA и правила отмены." },
   { title: "Пилотный фокус", text: "Ташкент -> Самарканд -> Бухара. Три города, одна цепочка, максимальный туристический поток. 90 дней измеряем заявки, NPS, conversion и repeat." },
-  { title: "Validation KPI", text: "1 000 заявок, NPS >40, 12-18% conversion, 50+ партнёров. После этих цифр включаются оплаты, API и mobile. Не раньше." },
+  { title: "Validation KPI", text: "1 000 заявок, NPS выше 40 (индустриальный порог хорошего клиентского опыта в travel), конверсия 12-18%, 50+ подключённых партнёров. Эти пороги доказывают unit economics и оправдывают следующий транш капитала на оплаты, API и mobile." },
 ];
 
 export const revenueStreams = [
@@ -75,10 +76,10 @@ export const revenueStreams = [
 ];
 
 export const budgetSplit = [
-  { label: "Product & Engineering", value: "45%", amount: "$261K", text: "CTO/Lead, backend, frontend, QA, design, AI integration." },
-  { label: "Marketing & Growth", value: "25%", amount: "$145K", text: "Performance tests, SEO/content, influencer pilots, launch campaigns." },
-  { label: "Sales & Partnerships", value: "20%", amount: "$116K", text: "Подключение отелей, гидов, трансферов, B2B outreach и партнёрские материалы." },
-  { label: "Legal, Finance, Admin", value: "10%", amount: "$58K", text: "Договоры, платежная структура, accounting, compliance и операционные расходы." },
+  { label: "Продукт и разработка", value: "45%", amount: "$261K", text: "CTO/Lead, backend, frontend, QA, дизайн и AI-интеграция." },
+  { label: "Маркетинг и рост", value: "25%", amount: "$145K", text: "Performance-тесты, SEO/content, пилоты с инфлюенсерами и launch-кампании." },
+  { label: "Продажи и партнёрства", value: "20%", amount: "$116K", text: "Подключение отелей, гидов, трансферов, B2B outreach и партнёрские материалы." },
+  { label: "Юридический блок, финансы, администрирование", value: "10%", amount: "$58K", text: "Договоры, платежная структура, accounting, compliance и операционные расходы." },
 ];
 
 export const unitEconomics = [
@@ -97,7 +98,7 @@ export const financialScenarios = [
 export const investorRisks = [
   { title: "Регуляторный", risk: "Платежи, возвраты, страхование и лицензируемые услуги.", mitigation: "IT Park, legal review, ручное подтверждение в MVP, международная платёжная структура после пилота." },
   { title: "Конкурентный", risk: "Глобальная OTA усиливает локальное присутствие.", mitigation: "Локальный контент, support layer, B2B-договоры и партнёрская сеть, которую сложно купить быстро." },
-  { title: "Операционный", risk: "Качество гидов, отелей и трансферов нестабильно.", mitigation: "KYC партнёров, модерация, рейтинг, audit log, black-list и escalation rules." },
+  { title: "Операционный", risk: "Качество гидов, отелей и трансферов нестабильно.", mitigation: "KYC партнёров на входе, рейтинговая система, audit log, чёрный список и эскалационные правила — тот же подход, что используют Airbnb и Booking для контроля качества третьих сторон на ранней стадии." },
   { title: "Рыночный", risk: "Туристический поток ниже прогноза.", mitigation: "Внутренний туризм, business travel и local lifestyle как страховочная сетка спроса." },
   { title: "AI-качество", risk: "AI может дать неверный совет или не учесть локальный контекст.", mitigation: "RAG-база знаний, fallback на support, логирование ответов и human review для спорных сценариев." },
 ];
@@ -110,7 +111,7 @@ export const investorRoadmap = [
 ];
 
 export const whyNow = [
-  { text: "Узбекистан быстро растёт как туристическое направление Центральной Азии.", proof: "6.7M туристов в 2023; UNWTO: топ-20 быстрорастущих направлений." },
+  { text: "Узбекистан быстро растёт как туристическое направление Центральной Азии.", proof: "UN Tourism / UNWTO, дек. 2025: топ-7 мира по темпам роста въездного туризма, +73% к 2019." },
   { text: "Локальные партнёрские позиции можно занять раньше глобальных игроков.", proof: "Нет платформы с verified партнёрами и end-to-end support в Центральной Азии." },
   { text: "AI на внутренней базе знаний закрывает язык, культуру и правила.", proof: "RAG на локальных правилах, языках и SLA закрывает то, что не даст общий LLM." },
   { text: "IT Park и команда в Ташкенте усиливают timing.", proof: "IT Park: 0% налог на прибыль. Команда строит продукт рядом с рынком." },

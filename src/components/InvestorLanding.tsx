@@ -82,13 +82,16 @@ export function InvestorLanding() {
               <Sparkles size={16} /> Central Asia travel concierge layer
             </p>
             <h1 className="font-display text-4xl leading-[1.04] text-ink sm:text-5xl md:text-7xl">
-              Миллионы туристов уже едут в Узбекистан. Но поездку всё ещё собирают вручную.
+              Турпоток в Узбекистан вырос на 73% к допандемийному уровню. Цифровой инфраструктуры под него до сих пор нет.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-700 md:text-xl">
-              Жильё, гиды, трансферы, оплата, язык и поддержка живут в разных сервисах и чатах. Orient UBook объединяет их в один мультиинструмент с AI-консьержем и понятным маршрутом от прилёта до отъезда гостя.
+              По данным UN Tourism (UNWTO, декабрь 2025), Узбекистан — один из 7 самых быстрорастущих туристических рынков планеты. Турист уже здесь. Но его поездку по-прежнему собирают вручную: жильё в одном сервисе, гид в Telegram, трансфер через знакомых, оплата в трёх валютах.
+            </p>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700 md:text-xl">
+              Orient UBook закрывает этот разрыв первым: один AI-консьерж, один маршрут, один партнёрский слой — от прилёта до отъезда гостя.
             </p>
             <p className="mt-5 max-w-3xl rounded-md border border-gold/30 bg-white/78 px-4 py-3 text-base font-semibold leading-7 text-ink shadow-sm backdrop-blur">
-              Узбекистан вошёл в топ-20 самых быстрорастущих направлений мира. Первый, кто займёт цифровой слой поездки, занимает рынок.
+              Рынок растёт быстрее, чем успевает строиться его цифровая инфраструктура. Кто первым займёт этот слой — забирает рынок целиком, а не его долю.
             </p>
             <div className="mt-8 grid max-w-4xl gap-3 sm:grid-cols-3">
               {heroProof.map((item) => (
@@ -99,6 +102,9 @@ export function InvestorLanding() {
                 </div>
               ))}
             </div>
+            <p className="mt-4 max-w-4xl text-sm font-semibold leading-6 text-cobalt">
+              Структура раунда построена так, чтобы каждая стадия снижала риск следующей — не наоборот.
+            </p>
           </div>
         </div>
       </section>
@@ -106,7 +112,7 @@ export function InvestorLanding() {
       <section id="investor-problem" className="scroll-mt-24 bg-milk px-4 py-16 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.84fr_1.16fr]">
           <div className="relative">
-            <p className="text-sm font-semibold uppercase text-cobalt">Investor problem</p>
+            <p className="text-sm font-semibold uppercase text-cobalt">Проблема туриста</p>
             <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">{problemJourney.title}</h2>
             <div className="mt-6 rounded-md border border-cobalt/15 bg-white/78 p-5 shadow-glass">
               <div className="flex items-center gap-3">
@@ -148,6 +154,9 @@ export function InvestorLanding() {
             ))}
           </div>
         </div>
+        <div className="mx-auto mt-6 max-w-7xl rounded-md border border-cobalt/15 bg-white/80 p-5 text-lg font-semibold leading-8 text-ink shadow-sm">
+          Каждая точка трения сегодня — место, где никто не зарабатывает. Это и есть рынок, который собирает Orient UBook: не новый спрос, а монетизация уже существующего хаоса.
+        </div>
       </section>
 
       <section className="bg-white px-4 py-16 md:px-8">
@@ -156,7 +165,7 @@ export function InvestorLanding() {
             <Image src="/assets/registan.jpg" alt="Registan, Samarkand" fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/78 via-ink/20 to-transparent" />
             <div className="absolute bottom-0 max-w-xl p-6 text-white">
-              <p className="text-sm font-semibold uppercase text-white/75">Concierge-first platform</p>
+              <p className="text-sm font-semibold uppercase text-white/75">Платформа с консьержем в основе</p>
               <h2 className="mt-3 text-3xl font-semibold leading-tight md:text-4xl">Один интерфейс переводит хаос поездки в управляемую заявку.</h2>
             </div>
           </div>
@@ -178,7 +187,7 @@ export function InvestorLanding() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div className="max-w-4xl">
-              <p className="text-sm font-semibold uppercase text-cobalt">Market opportunity</p>
+              <p className="text-sm font-semibold uppercase text-cobalt">Рынок и возможность</p>
               <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">Окно входа открыто: спрос растёт быстрее, чем локальная цифровая инфраструктура.</h2>
             </div>
             <div className="glass-panel relative overflow-hidden p-5">
@@ -188,8 +197,8 @@ export function InvestorLanding() {
                   <TrendingUp size={22} />
                 </span>
                 <div>
-                  <p className="text-sm font-semibold uppercase text-cobalt">market signal</p>
-                  <p className="mt-2 text-lg font-semibold leading-7 text-ink">Спрос уже сформирован, но единый цифровой маршрут ещё не стал стандартом рынка.</p>
+                  <p className="text-sm font-semibold uppercase text-cobalt">Сигнал рынка</p>
+                  <p className="mt-2 text-lg font-semibold leading-7 text-ink">Узбекистан вошёл в топ-7 мира по темпам роста въездного туризма (UNWTO, дек. 2025), но ни один локальный игрок ещё не занял цифровой слой этой поездки. Окно для захвата категории открыто сейчас, и оно не будет открыто бесконечно.</p>
                 </div>
               </div>
             </div>
@@ -232,7 +241,7 @@ export function InvestorLanding() {
       <section id="competitive-position" className="scroll-mt-24 bg-white px-4 py-16 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase text-cobalt">Competitive position</p>
+            <p className="text-sm font-semibold uppercase text-cobalt">Конкурентная позиция</p>
             <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">Никто из текущих игроков не строит этот рынок снизу вверх.</h2>
           </div>
           <div className="mt-8">
@@ -244,7 +253,7 @@ export function InvestorLanding() {
                   <th className="px-4 py-3">Booking</th>
                   <th className="px-4 py-3">GetYourGuide</th>
                   <th className="px-4 py-3">Yandex Travel</th>
-                  <th className="px-4 py-3">Local agencies</th>
+                  <th className="px-4 py-3">Локальные агентства</th>
                 </tr>
               </thead>
               <tbody>
@@ -262,7 +271,7 @@ export function InvestorLanding() {
             </ResponsiveTable>
           </div>
           <p className="mt-5 rounded-md border border-cobalt/15 bg-cobalt/5 p-5 leading-7 text-slate-700">
-            Глобальные OTA начинают с каталога. Orient UBook начинает с локального контекста, партнёрского процесса и поддержки, поэтому может стать операционным слоем поездки, а не ещё одной витриной.
+            Booking и GetYourGuide продают каталог — они зарабатывают на показе, а не на результате поездки туриста. Orient UBook продаёт результат: маршрут, который реально случился, со status-трекингом и поддержкой на всём пути. Это структурно другой бизнес: его нельзя скопировать ещё одним каталогом, потому что нужна партнёрская сеть и доверие на земле.
           </p>
         </div>
       </section>
@@ -311,7 +320,7 @@ export function InvestorLanding() {
               <div className="flex items-center gap-3">
                 <CircleDollarSign className="text-cobalt" size={24} />
                 <div>
-                  <p className="text-sm font-semibold uppercase text-cobalt">Seed round 2026</p>
+                  <p className="text-sm font-semibold uppercase text-cobalt">Seed-раунд 2026</p>
                   <h2 className="mt-1 text-4xl font-semibold text-ink">$580K</h2>
                 </div>
               </div>
@@ -335,10 +344,10 @@ export function InvestorLanding() {
             </div>
             <div className="grid gap-4">
               <div className="glass-panel p-6">
-                <p className="text-sm font-semibold uppercase text-cobalt">Business model</p>
+                <p className="text-sm font-semibold uppercase text-cobalt">Бизнес-модель</p>
                 <h2 className="mt-3 text-3xl font-semibold text-ink">Экономика строится на заявках, take rate и партнёрской подписке.</h2>
                 <p className="mt-3 text-sm leading-6 text-slate-600">
-                  Структура на основе unit economics travel-маркетплейсов при take rate 10-15% и 1 000+ подтверждённых заявок в месяц.
+                  Целевая структура выручки (revenue mix — распределение источников дохода) на горизонте 3 лет после выхода на транзакционный слой.
                 </p>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {revenueStreams.map((stream) => (
@@ -387,7 +396,23 @@ export function InvestorLanding() {
               </tbody>
             </ResponsiveTable>
             <p className="mt-3 rounded-md border border-slate-200 bg-white p-4 text-sm leading-6 text-slate-600">
-              Допущение модели: средний чек $150 и take rate 12%. Реальные цифры фиксируются после 90-дневного пилота.
+              Допущение модели: средний чек $150 и take rate (комиссия платформы с подтверждённой операции) 12%. Реальные цифры фиксируются после 90-дневного пилота.
+            </p>
+          </div>
+          <div className="mt-6 rounded-md border border-gold/25 bg-gold/10 p-5">
+            <p className="text-sm font-semibold uppercase text-gold">Условия раунда</p>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              {[
+                "Инструмент: уточнить — equity / SAFE / convertible note.",
+                "Оценка компании pre-money: уточнить.",
+                "Доля, предлагаемая инвесторам: уточнить.",
+                "Минимальный чек: уточнить.",
+              ].map((item) => (
+                <p key={item} className="rounded-md bg-white/80 p-3 text-sm font-semibold leading-6 text-slate-700">{item}</p>
+              ))}
+            </div>
+            <p className="mt-4 text-sm leading-6 text-slate-600">
+              Этот блок нужно заполнить реальными цифрами до активного outreach: без него инвестор не сможет посчитать ROI и перейти к звонку.
             </p>
           </div>
         </div>
@@ -396,8 +421,11 @@ export function InvestorLanding() {
       <section id="risk-register" className="scroll-mt-24 bg-ceramic px-4 py-16 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
-            <p className="text-sm font-semibold uppercase text-cobalt">Risk register</p>
-            <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">Риски не скрываем. MVP построен, чтобы проверять их дешево.</h2>
+            <p className="text-sm font-semibold uppercase text-cobalt">Карта рисков</p>
+            <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">Риски проверяются до масштабирования, а не после него.</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-700">
+              Мы сознательно построили MVP так, чтобы каждый из этих рисков проверялся на минимальном бюджете до запроса раунда масштабирования. Прозрачность здесь — часть модели снижения риска для инвестора.
+            </p>
           </div>
           <div className="grid gap-3">
             {investorRisks.map((item) => (
@@ -421,7 +449,7 @@ export function InvestorLanding() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase text-cobalt">Implementation roadmap</p>
+              <p className="text-sm font-semibold uppercase text-cobalt">Дорожная карта</p>
               <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">От MVP к транзакционной платформе через проверяемые этапы.</h2>
             </div>
             <Link href="/stages" className="inline-flex items-center gap-2 rounded-md bg-ink px-5 py-3 font-semibold text-white transition hover:bg-cobalt">
@@ -443,11 +471,11 @@ export function InvestorLanding() {
           <div className="mt-8 rounded-md border border-cobalt/15 bg-cobalt/5 p-5">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="flex items-center gap-2 text-sm font-semibold uppercase text-cobalt"><Target size={16} /> PMF rule</p>
+                <p className="flex items-center gap-2 text-sm font-semibold uppercase text-cobalt"><Target size={16} /> Правило PMF</p>
                 <p className="mt-2 max-w-3xl leading-7 text-slate-700">Переход к оплатам, API, mobile, Telegram и B2B делается только после пилотных данных: заявок, конверсии, NPS, повторного спроса и юридически готовых партнёрских договоров.</p>
               </div>
               <Link href="/developers" className="inline-flex shrink-0 items-center gap-2 rounded-md border border-cobalt/20 bg-white px-4 py-2 font-semibold text-cobalt transition hover:bg-cobalt hover:text-white">
-                Dev spec <BarChart3 size={18} />
+                Техническое ТЗ <BarChart3 size={18} />
               </Link>
             </div>
           </div>
@@ -458,13 +486,13 @@ export function InvestorLanding() {
         <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.86fr_1.14fr]">
           <div className="glass-panel relative overflow-hidden p-6">
             <div className="absolute -bottom-16 -right-12 h-40 w-40 rounded-full bg-cobalt/10 blur-3xl" />
-            <p className="text-sm font-semibold uppercase text-cobalt">Why now</p>
+            <p className="text-sm font-semibold uppercase text-cobalt">Почему сейчас</p>
             <h2 className="mt-3 text-4xl font-semibold leading-tight text-ink md:text-5xl">Рынок созрел для локального travel layer.</h2>
             <p className="mt-5 text-sm leading-6 text-slate-600">
               Узбекистан уже получает туристический спрос, но цифровой слой поездки ещё не занял сильный локальный игрок.
             </p>
             <div className="relative mt-6 rounded-md border border-cobalt/15 bg-white/70 p-4">
-              <p className="text-xs font-semibold uppercase text-slate-500">timing thesis</p>
+              <p className="text-xs font-semibold uppercase text-slate-500">Тезис по timing</p>
               <p className="mt-2 text-2xl font-semibold text-ink">Local-first сейчас важнее глобального каталога.</p>
             </div>
           </div>
@@ -488,11 +516,11 @@ export function InvestorLanding() {
           <div className="grid gap-4 md:grid-cols-2">
             <div className="glass-panel p-5">
               <p className="text-sm font-semibold uppercase text-cobalt">Команда</p>
-              <h2 className="mt-2 text-2xl font-semibold text-ink">Ташкент-based команда.</h2>
+              <h2 className="mt-2 text-2xl font-semibold text-ink">Команда строит продукт внутри рынка.</h2>
               <div className="mt-4 grid gap-3 text-sm leading-6 text-slate-700">
-                <p><span className="font-semibold text-ink">Dmitriy Laz — Founder / Product.</span> Ведёт продуктовую концепцию, партнёрскую модель, инвестиционную упаковку и запуск MVP в Ташкенте.</p>
-                <p><span className="font-semibold text-ink">Открытая позиция: CTO / Lead Developer.</span> Нужен технический лидер для backend, архитектуры, качества и команды первых инженеров.</p>
-                <p className="rounded-md bg-cobalt/5 p-3 font-semibold text-cobalt">Продукт строится внутри рынка, а не снаружи.</p>
+                <p><span className="font-semibold text-ink">Dmitriy Laz — Founder / Product.</span> Спроектировал продуктовую модель, партнёрскую сеть, инвестиционную упаковку и техническое задание MVP — находясь в Ташкенте, на том же рынке, который продукт обслуживает.</p>
+                <p><span className="font-semibold text-ink">Найм CTO / Lead Developer встроен в план раунда, а не является пробелом команды.</span> 45% средств раунда ($261K) зарезервированы под продукт и разработку, включая технического лидера и первую инженерную команду.</p>
+                <p className="rounded-md bg-cobalt/5 p-3 font-semibold text-cobalt">Продуктовая и партнёрская модель валидируется до найма дорогой технической команды — раунд тратится по приоритету риска, а не по шаблону.</p>
               </div>
             </div>
             <div className="glass-panel p-5">
