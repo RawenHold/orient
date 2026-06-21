@@ -115,15 +115,12 @@ export default function DevelopersPage() {
             title="Локальный контекст, который влияет на архитектуру."
             text="Разработчик из другого рынка должен понимать платежи, языки, IT Park и локальных поставщиков до того, как начнёт проектировать API."
           />
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
             {uzDevContext.map((block) => (
-              <article key={block.title} className="feature-card rounded-md border border-slate-200 bg-white p-5 shadow-sm">
-                <h3 className="text-xl font-semibold text-ink">{block.title}</h3>
-                <div className="mt-4 grid gap-2">
-                  {block.items.map((item) => (
-                    <p key={item} className="rounded-md bg-slate-50 p-3 text-sm leading-6 text-slate-700">{item}</p>
-                  ))}
-                </div>
+              <article key={block.title} className="signal-card p-5">
+                <p className="text-xs font-semibold uppercase text-cobalt">{block.value}</p>
+                <h3 className="mt-2 text-xl font-semibold text-ink">{block.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{block.text}</p>
               </article>
             ))}
           </div>

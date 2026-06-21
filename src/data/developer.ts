@@ -35,40 +35,11 @@ export const dataRelations = [
 ];
 
 export const uzDevContext = [
-  {
-    title: "Платёжный контур",
-    items: [
-      "MVP этапы 0-7: только manual payment record.",
-      "Payme и Click подключаются на этапе 10 после юрлица/IT Park, KYB и договора с PSP.",
-      "Stripe недоступен напрямую из UZ: для международных платежей нужна структура UAE или Kazakhstan.",
-      "RateHawk и Ostrovok рассматриваются как post-MVP backup для гостиниц и туров.",
-    ],
-  },
-  {
-    title: "Языки",
-    items: [
-      "ru: основной язык туристов из СНГ; AI-консьерж отвечает без fallback на en.",
-      "uz: официальный язык; партнёрские шаблоны и локальный контент.",
-      "en: международная аудитория, B2B pitch и инвесторские материалы.",
-      "Реализация: next-intl или i18next; RAG-база с chunk-индексами по языкам.",
-    ],
-  },
-  {
-    title: "Юридика и IT Park",
-    items: [
-      "IT Park Uzbekistan: 0% налог на прибыль для IT-компаний при соответствии критериям.",
-      "Платёжная структура через IT Park требует отдельного legal review.",
-      "Договоры с партнёрами должны закрывать SLA, refund, ответственность и KYC/KYB.",
-    ],
-  },
-  {
-    title: "Поставщики и интеграции",
-    items: [
-      "Этап 8+: RateHawk API, Ostrovok API, GPT-4o/RAG, Cloudflare R2.",
-      "Frontend не ходит напрямую во внешние API: все интеграции только через backend.",
-      "Если внешний API недоступен, работает assisted flow через support.",
-    ],
-  },
+  { title: "Платёжный контур", value: "Этап 10", text: "Этапы 0-7: только manual payment record. Payme/Click, refunds и reconciliation подключаются после юрлица, IT Park/KYB и договора с PSP." },
+  { title: "Языки", value: "RU / UZ / EN", text: "ru для туристов из СНГ, uz для партнёров и локального контента, en для международной аудитории и B2B. Реализация через locale-файлы и RAG по языкам." },
+  { title: "Юридика и IT Park", value: "Legal review", text: "IT Park, персональные данные, партнёрские договоры, SLA и refund-правила учитываются до платежей и API-бронирований. Audit log обязателен." },
+  { title: "Локальные интеграции", value: "Post-MVP", text: "RateHawk/Ostrovok, Payme/Click, GPT-4o/RAG и Cloudflare R2 подключаются через backend. Если API недоступен, работает assisted flow через support." },
+  { title: "Операционка партнёров", value: "KYB/KYC", text: "Отели, гиды и трансферы проходят проверку, SLA, правила отмены и ручную escalation. Supplier становится Partner только после проверки." },
 ];
 
 export const onboardingPrerequisites = [
