@@ -202,15 +202,15 @@ export function InvestorLanding() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-3 md:grid-cols-4">
+          <div className="mt-8 grid auto-cols-[220px] grid-flow-col gap-3 overflow-x-auto pb-2 xl:grid-flow-row xl:grid-cols-6 xl:overflow-visible">
             {marketTimeline.map((item, index) => (
-              <div key={item.year} className="metric-card glass-panel p-5" style={{ animationDelay: `${index * 70}ms` }}>
+              <div key={item.year} className="metric-card glass-panel min-h-[180px] p-4" style={{ animationDelay: `${index * 70}ms` }}>
                 <div className="flex items-center justify-between gap-3">
                   <p className="text-sm font-semibold text-cobalt">{item.year}</p>
                   <span className="h-2 w-2 rounded-full bg-lagoon shadow-[0_0_18px_rgba(23,185,193,0.75)]" />
                 </div>
-                <p className="mt-3 text-4xl font-semibold text-ink md:text-5xl">{item.value}</p>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
+                <p className="mt-3 text-4xl font-semibold text-ink">{item.value}</p>
+                <p className="mt-3 text-sm leading-5 text-slate-600">{item.text}</p>
               </div>
             ))}
           </div>
@@ -327,7 +327,7 @@ export function InvestorLanding() {
               </p>
               <div className="mt-5 grid gap-2">
                 {budgetSplit.map((item) => (
-                  <div key={item.label} className="rounded-md border border-slate-200 bg-white/80 p-3">
+                  <div key={item.label} className="signal-card p-4">
                     <div className="flex flex-wrap justify-between gap-3 text-sm font-semibold text-slate-700">
                       <span>{item.label}</span>
                       <span>{item.amount} · {item.value}</span>
@@ -349,7 +349,7 @@ export function InvestorLanding() {
                 </p>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {revenueStreams.map((stream) => (
-                    <div key={stream.title} className="rounded-md border border-slate-200 bg-white/75 p-4">
+                    <div key={stream.title} className="signal-card p-4">
                       <div className="flex items-center justify-between gap-3">
                         <h3 className="font-semibold text-ink">{stream.title}</h3>
                         <span className="text-2xl font-semibold text-cobalt">{stream.value}</span>
@@ -362,7 +362,7 @@ export function InvestorLanding() {
               </div>
               <div className="grid gap-3 md:grid-cols-4">
                 {unitEconomics.map((item) => (
-                  <div key={item.label} className="rounded-md border border-slate-200 bg-white p-4">
+                  <div key={item.label} className="signal-card p-4">
                     <p className="text-2xl font-semibold text-ink">{item.value}</p>
                     <p className="mt-2 text-sm font-semibold text-slate-700">{item.label}</p>
                     <p className="mt-2 text-xs leading-5 text-slate-500">{item.note}</p>
