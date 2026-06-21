@@ -5,10 +5,10 @@ export const heroProof = [
 ];
 
 export const deckMetrics = [
-  { value: "$8.4B", label: "TAM туристического GMV", note: "TAM (total addressable market — весь доступный рынок) = 11.7M путешественников x $720 средний чек на поездку. Источник базы: Госкомстат Узбекистана и UN Tourism / UNWTO, 2024-2025. GMV (gross merchandise value — объём транзакций до комиссии) здесь означает услуги, которые Orient UBook способен агрегировать через concierge-layer." },
+  { value: "~$4.8B", label: "TAM туристического GMV", note: "TAM (total addressable market — весь доступный рынок) = 11.7M путешественников x ~$410 средний чек на поездку. Множитель основан на экспортной выручке туризма около $4.4B при 10.7M туристов за январь-ноябрь 2025. Источники для проверки: UN Tourism / UNWTO, Tourism Committee of Uzbekistan, данные 2025. GMV (gross merchandise value — объём транзакций до комиссии) здесь означает услуги, которые Orient UBook способен агрегировать через concierge-layer." },
   { value: "11.7M", label: "прогноз 2025", note: "Прогноз на основе фактической динамики января-ноября 2025: 10.7M по данным UN Tourism / UNWTO." },
-  { value: "20M", label: "ориентир к 2030", note: "Целевой сценарий роста inbound и внутреннего туризма." },
-  { value: "$48M", label: "SOM net revenue Y5", note: "SOM (serviceable obtainable market — реалистично достижимая доля рынка) после расширения вертикалей и партнёрской сети." },
+  { value: "15M", label: "официальный target 2030", note: "Ориентир стратегии «Узбекистан-2030»: 15M туристов и $5-6B экспортной выручки. 20M остаётся только stretch-сценарием, отдельно от официального target." },
+  { value: "$40M", label: "SOM net revenue Y5", note: "Цепочка расчёта: TAM ~$4.8B -> SAM 35% (~$1.7B по ключевым городам и услугам) -> SOM 20% SAM (~$336M GMV к Y5) -> net revenue ~$40M при take rate 12%." },
 ];
 
 export const problemJourney = {
@@ -52,7 +52,7 @@ export const marketTimeline = [
   { year: "2023", value: "6.7M", text: "восстановление туристического потока" },
   { year: "2024", value: "8.2M", text: "факт, Госкомстат Узбекистана" },
   { year: "2025", value: "11.7M", text: "прогноз на основе фактической динамики января-ноября 2025" },
-  { year: "2030", value: "20M", text: "целевой сценарий роста рынка" },
+  { year: "2030", value: "15M", text: "официальный target стратегии «Узбекистан-2030»; 20M — stretch-сценарий" },
 ];
 
 export const customerSegments = [

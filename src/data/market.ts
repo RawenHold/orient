@@ -22,10 +22,10 @@ export const marketCards = [
   },
   {
     label: "2030 ambition",
-    value: "20M",
-    detail: "Tourist target used in materials",
-    source: "planning model",
-    note: "Use as long-term scenario together with the source selected for the public deck.",
+    value: "15M",
+    detail: "Official tourist target in Uzbekistan-2030 strategy",
+    source: "official",
+    note: "20M can be shown only as a separate stretch scenario, not as the official target.",
   },
 ];
 
@@ -41,5 +41,5 @@ export const pmfMetrics = [
 export const marketSources = [
   "UN Tourism World Tourism Barometer May 2026 excerpt: global arrivals +2% in Q1 2026; Uzbekistan +37% among strongest reported performers.",
   "World Bank tourism arrivals data can be linked for historical validation in public materials.",
-  "Pitch deck assumptions stay clearly marked as model inputs.",
+  "Uzbekistan-2030 strategy: official target is 15M tourists and $5-6B tourism export revenue; 20M remains a separate stretch scenario.",
 ];
