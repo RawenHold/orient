@@ -3,14 +3,12 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import {
   ArrowRight,
-  BarChart3,
   CheckCircle2,
   CircleDollarSign,
   Compass,
   Route,
   ShieldCheck,
   Sparkles,
-  Target,
   TrendingUp,
 } from "lucide-react";
 import {
@@ -399,22 +397,6 @@ export function InvestorLanding() {
               Допущение модели: средний чек $150 и take rate (комиссия платформы с подтверждённой операции) 12%. Реальные цифры фиксируются после 90-дневного пилота.
             </p>
           </div>
-          <div className="mt-6 rounded-md border border-gold/25 bg-gold/10 p-5">
-            <p className="text-sm font-semibold uppercase text-gold">Условия раунда</p>
-            <div className="mt-4 grid gap-3 md:grid-cols-2">
-              {[
-                "Инструмент: уточнить — equity / SAFE / convertible note.",
-                "Оценка компании pre-money: уточнить.",
-                "Доля, предлагаемая инвесторам: уточнить.",
-                "Минимальный чек: уточнить.",
-              ].map((item) => (
-                <p key={item} className="rounded-md bg-white/80 p-3 text-sm font-semibold leading-6 text-slate-700">{item}</p>
-              ))}
-            </div>
-            <p className="mt-4 text-sm leading-6 text-slate-600">
-              Этот блок нужно заполнить реальными цифрами до активного outreach: без него инвестор не сможет посчитать ROI и перейти к звонку.
-            </p>
-          </div>
         </div>
       </section>
 
@@ -467,17 +449,6 @@ export function InvestorLanding() {
                 </p>
               </article>
             ))}
-          </div>
-          <div className="mt-8 rounded-md border border-cobalt/15 bg-cobalt/5 p-5">
-            <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-              <div>
-                <p className="flex items-center gap-2 text-sm font-semibold uppercase text-cobalt"><Target size={16} /> Правило PMF</p>
-                <p className="mt-2 max-w-3xl leading-7 text-slate-700">Переход к оплатам, API, mobile, Telegram и B2B делается только после пилотных данных: заявок, конверсии, NPS, повторного спроса и юридически готовых партнёрских договоров.</p>
-              </div>
-              <Link href="/developers" className="inline-flex shrink-0 items-center gap-2 rounded-md border border-cobalt/20 bg-white px-4 py-2 font-semibold text-cobalt transition hover:bg-cobalt hover:text-white">
-                Техническое ТЗ <BarChart3 size={18} />
-              </Link>
-            </div>
           </div>
         </div>
       </section>

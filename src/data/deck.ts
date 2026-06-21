@@ -5,10 +5,10 @@ export const heroProof = [
 ];
 
 export const deckMetrics = [
-  { value: "~$4.8B", label: "TAM туристического GMV", note: "TAM (total addressable market — весь доступный рынок) = 11.7M путешественников x ~$410 средний чек на поездку. Множитель основан на экспортной выручке туризма около $4.4B при 10.7M туристов за январь-ноябрь 2025. Источники для проверки: UN Tourism / UNWTO, Tourism Committee of Uzbekistan, данные 2025. GMV (gross merchandise value — объём транзакций до комиссии) здесь означает услуги, которые Orient UBook способен агрегировать через concierge-layer." },
-  { value: "11.7M", label: "прогноз 2025", note: "Прогноз на основе фактической динамики января-ноября 2025: 10.7M по данным UN Tourism / UNWTO." },
-  { value: "15M", label: "официальный target 2030", note: "Ориентир стратегии «Узбекистан-2030»: 15M туристов и $5-6B экспортной выручки. 20M остаётся только stretch-сценарием, отдельно от официального target." },
-  { value: "$40M", label: "SOM net revenue Y5", note: "Цепочка расчёта: TAM ~$4.8B -> SAM 35% (~$1.7B по ключевым городам и услугам) -> SOM 20% SAM (~$336M GMV к Y5) -> net revenue ~$40M при take rate 12%." },
+  { value: "~$4.8B", label: "TAM туристического GMV", note: "11.7M туристов x ~$410 средний чек. База: экспортная выручка туризма ~$4.4B при 10.7M туристов за янв-нояб 2025." },
+  { value: "11.7M", label: "прогноз 2025", note: "Прогноз на базе факта: 10.7M туристов за январь-ноябрь 2025." },
+  { value: "15M", label: "официальный target 2030", note: "Стратегия «Узбекистан-2030»: 15M туристов и $5-6B экспортной выручки." },
+  { value: "$40M", label: "SOM net revenue Y5", note: "TAM ~$4.8B -> SAM 35% -> SOM 20% SAM -> ~$40M net revenue при take rate 12%." },
 ];
 
 export const problemJourney = {
