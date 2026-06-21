@@ -33,15 +33,15 @@ import { PresentationCta } from "./PresentationCta";
 import { SideSectionNav } from "./SideSectionNav";
 
 const investorSectionNav = [
-  { href: "#investor-problem", label: "Проблема туриста" },
-  { href: "#market-opportunity", label: "Рынок и возможность" },
-  { href: "#competitive-position", label: "Конкурентная позиция" },
-  { href: "#validation-customers", label: "Пилот и клиенты" },
-  { href: "#seed-business-model", label: "Раунд и бизнес-модель" },
-  { href: "#risk-register", label: "Карта рисков" },
-  { href: "#implementation-roadmap", label: "Дорожная карта" },
+  { href: "#investor-problem", label: "Проблема" },
+  { href: "#market-opportunity", label: "Рынок" },
+  { href: "#competitive-position", label: "Конкуренты" },
+  { href: "#validation-customers", label: "Клиенты" },
+  { href: "#seed-business-model", label: "Раунд" },
+  { href: "#risk-register", label: "Риски" },
+  { href: "#implementation-roadmap", label: "Roadmap" },
   { href: "#why-now", label: "Почему сейчас" },
-  { href: "#investor-room", label: "Комната инвестора" },
+  { href: "#investor-room", label: "Deck" },
 ];
 
 const investorSectionActions = [
