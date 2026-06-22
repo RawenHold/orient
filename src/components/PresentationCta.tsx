@@ -25,11 +25,6 @@ export function PresentationCta({ compact = false }: { compact?: boolean }) {
               <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600 md:text-base">
                 Быстрый доступ к прямому контакту и investor deck. Всё, что нужно для первого разговора по раунду и пилоту.
               </p>
-              <div className="mt-3 flex flex-wrap gap-2 text-xs font-semibold text-slate-500">
-                <span className="rounded-md bg-slate-100 px-2.5 py-1">Telegram</span>
-                <span className="rounded-md bg-slate-100 px-2.5 py-1">Презентация PDF</span>
-                <span className="rounded-md bg-slate-100 px-2.5 py-1">Seed-раунд</span>
-              </div>
             </div>
           </div>
           <div className="grid gap-2 sm:grid-cols-3 lg:min-w-[560px]">
