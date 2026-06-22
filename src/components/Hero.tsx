@@ -9,7 +9,7 @@ export function Hero() {
       <div className="relative mx-auto grid min-h-[calc(92vh-4rem)] max-w-7xl content-center px-4 py-20 md:px-8">
         <div className="max-w-3xl">
           <p className="mb-5 inline-flex items-center gap-2 rounded-md border border-cobalt/20 bg-white/70 px-3 py-2 text-sm font-semibold text-cobalt backdrop-blur">
-            <Compass size={16} /> API-first Travel Concierge Platform
+            <Compass size={16} /> First Travel Concierge Platform
           </p>
           <h1 className="font-display text-5xl leading-[1.02] text-ink md:text-7xl">
             Orient UBook превращает поездку в Узбекистан в управляемый маршрут.
