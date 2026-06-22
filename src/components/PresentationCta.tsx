@@ -19,11 +19,11 @@ export function PresentationCta({ compact = false }: { compact?: boolean }) {
             </span>
             <div>
               <div className="flex flex-wrap items-center gap-2">
-                <p className="text-xl font-semibold text-ink">Комната инвестора</p>
+                <p className="text-xl font-semibold text-ink">Для инвестора</p>
                 <span className="rounded-full border border-cobalt/15 bg-cobalt/5 px-2.5 py-1 text-xs font-semibold text-cobalt">Seed $580K</span>
               </div>
               <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600 md:text-base">
-                Быстрый доступ к прямому контакту и investor deck. Всё, что нужно для первого разговора по раунду и пилоту.
+                Связаться с нами для обсуждения MVP проекта.
               </p>
             </div>
           </div>
