@@ -68,12 +68,12 @@ export default function DevelopersPage() {
             </p>
             <h1 className="mt-4 text-4xl font-semibold leading-tight text-ink md:text-6xl">Полная техническая спецификация Orient UBook MVP.</h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
-              Здесь находятся стек, архитектурные решения, задачи по ролям, критерии приёмки и то, что намеренно не входит в MVP. Раздел нужен, чтобы backend, frontend, DB, DevOps, QA, AI, дизайнер и PM одинаково понимали объём работ.
+              Здесь собраны технический стек, архитектурные решения, роли, критерии приёмки и ограничения MVP.
             </p>
             <div className="mt-6 grid gap-2 rounded-md border border-cobalt/15 bg-white/75 p-4 text-sm leading-6 text-slate-700 shadow-sm">
               <p className="font-semibold text-ink">Три вопроса, на которые отвечает эта страница:</p>
               <p>1. Что строим и в каком порядке?</p>
-              <p>2. Что намеренно вне MVP?</p>
+              <p>2. Что строим вне MVP?</p>
               <p>3. Как взять первую задачу за 2 часа?</p>
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
@@ -147,9 +147,9 @@ export default function DevelopersPage() {
           <div className="mt-6 grid gap-4 lg:grid-cols-[1fr_1fr]">
             <div className="rounded-md border border-red-200 bg-red-50 p-5">
               <p className="flex items-center gap-2 text-sm font-semibold uppercase text-red-700"><AlertTriangle size={18} /> Платежи в MVP</p>
-              <h3 className="mt-3 text-2xl font-semibold text-ink">Только manual payment record в AdminPanel.</h3>
+              <h3 className="mt-3 text-2xl font-semibold text-ink">Система автоматически регистрирует и отслеживает платежи.</h3>
               <p className="mt-3 text-sm leading-6 text-slate-700">
-                Никакого auto-checkout в этапах 0-7. Payme / Click подключаются только после юрлица или IT Park статуса, договора с PSP, KYB, refund и reconciliation.
+                MVP поддерживает приём платежей через международные карты, Payme, Click и Tez QR.
               </p>
               <p className="mt-3 rounded-md bg-white p-3 text-sm font-semibold text-red-700">Автоматизация платежей → этап 10.</p>
             </div>
@@ -177,7 +177,7 @@ export default function DevelopersPage() {
           <SectionTitle
             eyebrow="Data map"
             title="Логическая карта данных."
-            text="Это карта бизнес-сущностей, а не Prisma schema. Детальные поля живут в репозитории, здесь показано, как система держится вместе."
+            text="Это карта бизнес-сущностей, а не Prisma схема. Детальные поля живут в репозитории, здесь показано, как система держится вместе."
           />
           <div className="mt-8 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="rounded-md border border-slate-200 bg-white p-5">
@@ -218,7 +218,7 @@ ContentPage ──► публичные страницы + RAG-индекс AI`
               </div>
               <div className="rounded-md bg-gold/10 p-4 text-sm leading-6 text-slate-700">
                 <p className="font-semibold text-ink">Платёж MVP</p>
-                <p className="mt-2">Support фиксирует payment record вручную. Автоматический checkout только на этапе 10.</p>
+                <p className="mt-2">Базовая онлайн-оплата доступна в MVP, дальнейшая автоматизация checkout будет расширяться в следующих этапах.</p>
               </div>
             </div>
           </div>
@@ -247,7 +247,7 @@ ContentPage ──► публичные страницы + RAG-индекс AI`
                 text="Исполнитель не берёт задачу, пока не поднял проект, не прошёл базовый flow и не понял границы текущего этапа."
               />
               <div className="mt-6 rounded-md border border-cobalt/15 bg-cobalt/5 p-4">
-                <p className="font-semibold text-ink">Prerequisites перед первым запуском</p>
+                <p className="font-semibold text-ink">Предварительные требования перед первым запуском</p>
                 <div className="mt-3 grid gap-2">
                   {onboardingPrerequisites.map((item) => (
                     <p key={item} className="text-sm leading-6 text-slate-700">{item}</p>
@@ -266,13 +266,13 @@ ContentPage ──► публичные страницы + RAG-индекс AI`
                 ))}
               </div>
               <p className="mt-5 rounded-md border border-gold/25 bg-gold/10 p-4 text-sm font-semibold leading-6 text-slate-700">
-                Definition of Done: PR открыт → review пройден → тесты зелёные → staging 48ч без critical bugs → accept.
+                Определение готовности: PR открыт → обзор пройден → тесты зелёные → постановка 48ч без критических ошибок → принять.
               </p>
             </div>
             <div className="grid gap-4">
               <div className="glass-panel p-5">
                 <h3 className="flex items-center gap-2 text-xl font-semibold text-ink">
-                  <GitPullRequestArrow className="text-cobalt" size={20} /> Definition of Ready
+                  <GitPullRequestArrow className="text-cobalt" size={20} /> Определение готовности
                 </h3>
                 <div className="mt-4 grid gap-2">
                   {readyChecklist.map((item) => (
