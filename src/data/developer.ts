@@ -35,7 +35,7 @@ export const dataRelations = [
 ];
 
 export const uzDevContext = [
-  { title: "Платёжный контур", value: "Этап 10", text: "Этапы 0-7: только manual payment record. Payme/Click, refunds и reconciliation подключаются после юрлица, IT Park/KYB и договора с PSP." },
+  { title: "Платёжный контур", value: "Этап 10", text: "Этапы 0-7: MVP поддерживает базовые онлайн-платежи, Payme/Click. Возвраты и согласование подключаются после юрлица, IT Park/KYB и договора с поставщиком платёжных услуг." },
   { title: "Языки", value: "RU / UZ / EN", text: "ru для туристов из СНГ, uz для партнёров и локального контента, en для международной аудитории и B2B. Реализация через locale-файлы и RAG по языкам." },
   { title: "Юридика и IT Park", value: "Legal review", text: "IT Park, персональные данные, партнёрские договоры, SLA и refund-правила учитываются до платежей и API-бронирований. Audit log обязателен." },
   { title: "Локальные интеграции", value: "Post-MVP", text: "RateHawk/Ostrovok, Payme/Click, GPT-4o/RAG и Cloudflare R2 подключаются через backend. Если API недоступен, работает assisted flow через support." },
