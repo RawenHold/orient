@@ -107,7 +107,7 @@ export const investorRoadmap = [
   { period: "0-18 недель", title: "MVP Build", text: "AI/support, заявки, admin, партнёры, контент, статусы услуг и аналитика спроса.", outcome: "Рабочий request flow, admin с audit log, 10 партнёров в системе и публичный SEO-сайт." },
   { period: "90 дней", title: "Pilot Sprint", text: "Проверка 1 000 заявок, NPS, конверсии, repeat use и операционной стоимости обработки.", outcome: "Данные conversion, NPS, повторного спроса и себестоимости обработки одной заявки." },
   { period: "После PMF", title: "Transactional Layer", text: "Оплаты, API-бронирования, eSIM/insurance checkout и партнёрские кабинеты.", outcome: "Payme/Click, API-бронирования, partner dashboard и ARR от подтверждённых заявок." },
-  { period: "Scale", title: "Central Asia SuperApp", text: "Mobile, Telegram, B2B, loyalty, расширение вертикалей и региональный рост.", outcome: "Mobile, Telegram, B2B, loyalty и выход за пределы Узбекистана." },
+  { period: "Масштабирование", title: "Central Asia SuperApp", text: "Mobile, Telegram, B2B, loyalty, расширение вертикалей и региональный рост.", outcome: "Mobile, Telegram, B2B, loyalty и выход за пределы Узбекистана." },
 ];
 
 export const whyNow = [
