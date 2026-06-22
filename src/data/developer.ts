@@ -1,7 +1,7 @@
 export const quickNav = ["Backend", "Frontend", "DB", "DevOps", "QA", "AI", "Роли", "Глоссарий"];
 
 export const techStack = [
-  { layer: "Frontend", value: "Next.js 14 App Router + TypeScript + Tailwind", note: "SSR/ISR для SEO, единый UI для tourist/admin/investor.", why: "Менять нельзя: сайт уже деплоится на Vercel." },
+  { layer: "Frontend", value: "Next.js 14 App Router + TypeScript + Tailwind", note: "SSR/ISR для SEO, единый UI для tourist/admin/investor." },
   { layer: "Backend", value: "NestJS + TypeScript + Prisma ORM", note: "Модульный монолит с явными доменами и строгими DTO.", why: "До Series A архитектура не усложняется микросервисами." },
   { layer: "Database", value: "PostgreSQL primary + Redis cache/sessions", note: "PostgreSQL хранит бизнес-данные, Redis держит сессии, OTP TTL 5 минут и кеш справочников.", why: "Так проще держать статусы, RBAC и аудит в одном контуре." },
   { layer: "Auth", value: "NextAuth или custom JWT + OAuth", note: "Google, Yandex, Apple, email/phone OTP; роли закрываются RBAC.", why: "OAuth-провайдеры фиксируются при реализации этапа 1." },
@@ -10,7 +10,7 @@ export const techStack = [
   { layer: "Infra", value: "Docker Compose -> Railway/Render -> VPS", note: "Одинаковый dev-контур, staging для пилота и управляемый production.", why: "Kubernetes не нужен до зрелого production load." },
   { layer: "CI/CD", value: "GitHub Actions", note: "Lint, typecheck, tests, build, migrations и staging deploy.", why: "PR не проходит без автоматических проверок." },
   { layer: "Monitoring", value: "Sentry + PostHog", note: "Ошибки, воронки, события заявок и поведение пользователей.", why: "PMF проверяется событиями, а не мнениями команды." },
-  { layer: "Payments MVP", value: "Manual payment record; Payme/Click post-MVP", note: "В MVP нет auto-checkout. Support фиксирует оплату вручную в AdminPanel.", why: "Payme/Click подключаются только после юрлица, KYB, refund и reconciliation." },
+  { layer: "Payments MVP", value: "Online payments enabled", note: "В MVP доступны базовые онлайн-платежи через банковские карты, Payme, Click и Tez QR.", why: "Остальные способы оплаты подключаются после PMF." },
 ];
 
 export const excludedStack = [
