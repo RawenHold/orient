@@ -29,7 +29,7 @@ export function InvestorSection() {
             ))}
           </div>
           <div className="mt-6 rounded-md border border-cobalt/20 bg-cobalt/5 p-5 text-sm leading-6 text-slate-700">
-            Decision rule: переводить в полноценную функцию только те вертикали, где есть спрос, подтверждённый партнёр, понятный legal path и fallback на ручной процесс.
+            Критерии запуска: переводить в полноценную функцию только те вертикали, где есть спрос, подтверждённые партнёры, юридическая готовность.
           </div>
         </div>
         <div className="relative overflow-hidden rounded-md border border-white/70 bg-ink p-6 text-white shadow-lift">
