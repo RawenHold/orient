@@ -7,7 +7,7 @@ export function Footer() {
         <div>
           <h2 className="text-2xl font-semibold">Orient UBook</h2>
           <p className="mt-3 max-w-md text-sm leading-6 text-white/70">
-            Investor landing + developer specification for an Uzbekistan travel concierge platform. MVP проверяет спрос, Post-MVP расширяет сервисы после данных и договоров.
+            Документ для инвесторов и разработчиков AI travel concierge-платформы в Узбекистане: MVP тестирует спрос, Post-MVP добавляет новые сервисы после подтверждения рынка.
           </p>
         </div>
         <div>
