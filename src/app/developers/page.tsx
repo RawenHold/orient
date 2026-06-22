@@ -113,7 +113,7 @@ export default function DevelopersPage() {
           <SectionTitle
             eyebrow="UZ Dev Context"
             title="Локальный контекст, который влияет на архитектуру."
-            text="Разработчик из другого рынка должен понимать платежи, языки, IT Park и локальных поставщиков до того, как начнёт проектировать API."
+            text="Разработчик должен понимать платежи, языки, IT Park и локальных поставщиков до того, как начнёт проектировать API."
           />
           <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-5">
             {uzDevContext.map((block) => (
